@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Animais</title>
+</head>
+<body>
+    <h1 class="page-title">Cadastro de Animais</h1>
+
+    <!-- Formulário para criar um novo produto -->
+    <h2 class="section-title">Novo Animal</h2>
+    <form id="formAddAnimais" class="formulario">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="porte">Porte:</label>
+            <input type="text" id="porte" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="idade">Idade:</label>
+            <input type="text" id="idade" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto:</label>
+            <input type="file" id="foto" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="castrado">Castrado:</label>
+            <input type="text" id="castrado" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="vacinado">Vacinado:</label>
+            <input type="text" id="vacinado" class="form-input" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+            <button type="button" id="addAnimais" class="flat-button">Criar Produto</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
