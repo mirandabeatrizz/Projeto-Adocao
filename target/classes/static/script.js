@@ -67,12 +67,16 @@ function listarAnimais(){
             listaAnimais.appendChild(tr);
         });
         const botoesExcluir = document.querySelectorAll('.botao-excluir');
+        const botoesEditar = document.querySelectorAll('.botao-editar');
+
+     
 
         botoesExcluir.forEach(botao => {
             botao.addEventListener('click', function () {
                 const id = botao.getAttribute('data-id');
                 // Confirmar com o usuário antes de excluir
                 const confirmacao = confirm('Tem certeza de que deseja excluir este produto?');
+               
 
                 if (confirmacao) {
                     // Enviar a solicitação DELETE
