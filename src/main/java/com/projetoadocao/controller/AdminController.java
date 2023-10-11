@@ -18,7 +18,7 @@ import com.projetoadocao.repositories.AdminRepository;
 
 //@RestController
 @Controller
-@RequestMapping("/adm/users")
+@RequestMapping("/adm/")
 public class AdminController {
 
     @Autowired
@@ -27,10 +27,7 @@ public class AdminController {
     private AdminController(AdminRepository adminRepository){
         this.adminRepository = adminRepository;
     }
-    @GetMapping("/teste")
-    public String teste(){
-        return "CadastroAnimais";
-    }
+  
     @PostMapping("/adicionar")
     public Administradores adicionarAdm(@RequestBody Administradores admin){
         return adminRepository.save(admin);

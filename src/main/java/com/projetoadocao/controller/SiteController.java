@@ -14,5 +14,10 @@ public class SiteController {
     public String adicionarinteresse(){
         return "FormInteressados";
     }
+
+    @GetMapping("/users")
+    public String addUser(){
+        return "CadastroUser";
+    }
     
 }
