@@ -61,8 +61,7 @@ function listarAnimais(){
             <td>${animal.foto}</td>
             <td>${animal.castrado}</td>
             <td>${animal.vacinado}</td>
-            <td>
-                     
+            <td> 
                 <button class="botao-excluir flat-button" data-id="${animal.id}">Excluir</button>
             </td> `;
 
