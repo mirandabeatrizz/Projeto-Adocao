@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.projetoadocao.entities.Administradores;
 import com.projetoadocao.repositories.AdminRepository;
 
-//@RestController
-@Controller
+@RestController
 @RequestMapping("/adm/")
 public class AdminController {
 
@@ -36,11 +35,11 @@ public class AdminController {
     @PutMapping("/editar/{id}")
     public Administradores editarAdmin(@PathVariable Long id, @RequestBody Administradores novoAdmin){
         return adminRepository.findById(id).map(admin -> {
-            admin.setLogin(novoAdmin.getLogin());
+            admin.setNome(novoAdmin.getNome());
+            admin.setEmail(novoAdmin.getEmail());
             admin.setSenha(novoAdmin.getSenha());
             return adminRepository.save(admin);
-            
-           
+
         })
         .orElseGet(() ->{
             novoAdmin.setId(id);
