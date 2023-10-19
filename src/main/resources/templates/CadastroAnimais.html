@@ -7,7 +7,6 @@
 </head>
 <body>
     <h1 class="page-title">Cadastro de Animais</h1>
-
     <!-- Formulário para criar um novo produto -->
     <h2 class="section-title">Novo Animal</h2>
     <form id="formAddAnimais" class="formulario">
@@ -17,11 +16,19 @@
         </div>
         <div class="form-group">
             <label for="tipo">Tipo:</label>
-            <input type="text" id="tipo" class="form-input" required>
+            <select name="tipo" id="tipo" class="form-input" required>
+                <option id="gato">Gato</option>
+                <option id="cachorro">Cachorro</option>
+                <option id="outros">Outros</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="porte">Porte:</label>
-            <input type="text" id="porte" class="form-input" required>
+            <select type="text" id="porte" class="form-input" required>
+                <option id="pequeno">Pequeno</option>
+                <option id="medio">Médio</option>
+                <option id="grande">Grande</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="idade">Idade:</label>
@@ -32,18 +39,44 @@
             <input type="file" id="foto" class="form-input" required>
         </div>
         <div class="form-group">
+          
             <label for="castrado">Castrado:</label>
-            <input type="text" id="castrado" class="form-input" required>
+            <input type="radio" required value="sim Cadastrado" name="castrado" id="castrado"
+                class="form-input">Sim
+            <input type="radio" required value="nao Cadastrado" name="castrado" id="castrado"
+                class="form-input">Não
         </div>
         <div class="form-group">
             <label for="vacinado">Vacinado:</label>
-            <input type="text" id="vacinado" class="form-input" step="0.01" required>
+            <div class="group">
+                <input type="radio" required value="simVacinado" name="vacinado" id="vacinado" class="form-input"
+                    step="0.01">Sim
+                <input type="radio" required value="naoVacinado" name="vacinado" id="vacinado" class="form-input"
+                    step="0.01">Não
+                </div>
         </div>
 
         <div class="form-group">
             <button type="button" id="addAnimais" class="flat-button">Criar Produto</button>
         </div>
     </form>
+      <!-- Lista de Animais -->
+      <h2 class="section-title">Lista de Animais</h2>
+      <table class="tabela">
+          <thead>
+              <tr>
+                  <th>Nome</th>
+                  <th>Tipo</th>
+                  <th>Porte</th>
+                  <th>Idade</th>
+                  <th>Foto</th>
+                  <th>Castrado</th>
+                  <th>Vacinado</th> 
+                  <th>Ações</th><!-- Coluna para ações -->
+              </tr>
+          </thead>
+          <tbody id="listaAnimais"></tbody>
+      </table>
     <script src="script.js"></script>
 </body>
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+</head>
+<body>
+    <section class="cadastro-user">
+        <div>
+            <form action="">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha">
+                </div>
+                <div class="form-group">
+                    <button id="fzrLogin">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section>
+        <h2>Lista Usuários</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaUsers"></tbody>
+        </table>
+    </section>
+    <script src="users.js"></script>
+</body>
+</html>
