@@ -15,5 +15,42 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SpringSecurity {
-    
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Bean 
+    public static PasswordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests((authorize) ->
+                        authorize.requestMatchers("/css/**","/img/**").permitAll()
+                                .requestMatchers("/CadasroUser/**").permitAll()
+                                .requestMatchers("/index").permitAll()
+                                .requestMatchers("/index2").permitAll()
+                                .requestMatchers("/").permitAll()
+                                .requestMatchers("/adm/**").hasRole("ADMIN")
+                                .requestMatchers("/animais/**").hasRole("ADMIN")
+                ).formLogin(
+                form -> form
+                        .loginPage("/PaginaLogin")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/adm")
+                        .permitAll()
+        ).logout(
+                logout -> logout
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .permitAll()
+        );
+        return http.build();
+    }
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder());
+    }
 }
