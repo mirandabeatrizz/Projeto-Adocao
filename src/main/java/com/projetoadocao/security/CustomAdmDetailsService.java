@@ -4,6 +4,8 @@ package com.projetoadocao.security;
 import com.projetoadocao.entities.Role;
 import com.projetoadocao.entities.Administradores;
 import com.projetoadocao.repositories.AdminRepository;
+
+import org.hibernate.mapping.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -30,7 +32,7 @@ public class CustomAdmDetailsService  implements UserDetailsService{
         if (adm != null) {
             return new org.springframework.security.core.userdetails.User(adm.getEmail(),
                     adm.getSenha(),
-                    mapRolesToAuthorities(adm.get()));
+                    mapRolesToAuthorities(adm.getRoles()));
         }else{
             throw new UsernameNotFoundException("Usuário ou senha inválidos.");
         }

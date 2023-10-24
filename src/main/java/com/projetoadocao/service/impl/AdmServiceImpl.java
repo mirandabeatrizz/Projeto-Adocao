@@ -1,5 +1,10 @@
-import java.lang.reflect.Array;
+package com.projetoadocao.service.impl;
+
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
 
 import com.projetoadocao.dto.AdmDto;
 import com.projetoadocao.entities.Administradores;
@@ -7,12 +12,13 @@ import com.projetoadocao.entities.Role;
 import com.projetoadocao.repositories.AdminRepository;
 import com.projetoadocao.repositories.RoleRepository;
 import com.projetoadocao.service.AdminService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service
 public class AdmServiceImpl implements AdminService {
     private AdminRepository adminRepository;
     private RoleRepository roleRepository;
-    private PasswordEnconder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     public AdmServiceImpl (AdminRepository adminRepository,
                             RoleRepository roleRepository,
@@ -25,7 +31,7 @@ public class AdmServiceImpl implements AdminService {
     @Override
     public void saveAdm(AdmDto admDto){
         Administradores adm = new Administradores();
-        adm.setNome(admDto.getName());
+        adm.setNome(admDto.getNome());
         adm.setEmail(admDto.getEmail());
         adm.setSenha(passwordEncoder.encode(admDto.getSenha()));
         
@@ -33,7 +39,7 @@ public class AdmServiceImpl implements AdminService {
         if(role == null){
             role = checkRoleExist();
         }
-        adm.setRoles(Array.asList(role));
+        adm.setRoles(Arrays.asList(role));
         adminRepository.save(adm);
     }
 
@@ -57,7 +63,7 @@ public class AdmServiceImpl implements AdminService {
     }
 
     private Role checkRoleExist(){
-        javax.management.relation.Role role = new Role();
+        Role role = new Role();
         role.setName("ROLE_ADMIN");
         return roleRepository.save(role);
     }
