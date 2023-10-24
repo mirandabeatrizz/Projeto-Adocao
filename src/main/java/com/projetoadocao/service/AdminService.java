@@ -1,7 +1,10 @@
-package main.java.com.projetoadocao.service;
+package com.projetoadocao.service;
 
-import main.java.com.projetoadocao.entities.Administradores;
-import main.java.com.projetoadocao.dto.AdmDto;
+import com.projetoadocao.entities.Administradores;
+
+import java.util.List;
+
+import com.projetoadocao.dto.AdmDto;
 
 public interface AdminService{
     void saveAdm(AdmDto admDto);

@@ -1,4 +1,5 @@
-package main.java.com.projetoadocao.dto;
+package com.projetoadocao.dto;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -13,15 +14,11 @@ import lombok.Setter;
 public class AdmDto{
 
     private Long id;
-
     @NotEmpty
     private String nome;
-    
-    
     @Email
     @NotEmpty(message = "Email deve ser informado")
     private String email;
-   
     
     @NotEmpty
     private String senha;

@@ -1,4 +1,4 @@
-package main.java.com.projetoadocao.config;
+package com.projetoadocao.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ public class SpringSecurity {
     private UserDetailsService userDetailsService;
 
     @Bean 
-    public static PasswordEncoder(){
+    public static PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
     @Bean

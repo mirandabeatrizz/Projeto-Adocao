@@ -1,6 +1,8 @@
-package main.java.com.projetoadocao.controller;
+package com.projetoadocao.controller;
 
-import main.java.com.projetoadocao.service.AdminService;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.projetoadocao.service.AdminService;
 
 @RestController
 public class AuthController {
