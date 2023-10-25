@@ -41,4 +41,7 @@ public class Animais {
     @Column(nullable = false, length = 100)
     private String vacinado;
 
+    @Column(length = 350)
+    private String desc;
+
 }

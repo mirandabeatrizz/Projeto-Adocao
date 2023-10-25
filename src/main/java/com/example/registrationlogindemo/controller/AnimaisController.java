@@ -43,6 +43,7 @@ public class AnimaisController {
             animais.setIdade(novoAnimal.getIdade());
             animais.setCastrado(novoAnimal.getCastrado());
             animais.setVacinado(novoAnimal.getVacinado());
+            animais.setDesc(novoAnimal.getDesc());
             return animaisRepository.save(animais);
         })
         .orElseGet(() ->{

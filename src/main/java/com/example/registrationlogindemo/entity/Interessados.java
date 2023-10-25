@@ -44,6 +44,9 @@ public class Interessados {
     
     @Column(nullable = false, length = 100)
     private String mensagem;
+
+    @Column()
+    private Date dataNasc;
     
     @ManyToOne
     @JoinColumn(name="animais_id")
