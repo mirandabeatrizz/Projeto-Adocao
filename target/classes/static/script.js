@@ -13,7 +13,7 @@ function listarAnimais(){
             <td>${animal.tipo}</td>
             <td>${animal.porte}</td>
             <td>${animal.idade}</td>
-            <td>${animal.foto}</td>
+            <td>${animal.desc}</td>
             <td>${animal.castrado}</td>
             <td>${animal.vacinado}</td>
             <td> 
@@ -25,8 +25,6 @@ function listarAnimais(){
         //BOTÃO PRA CHAMAR O EXCLUIR
         const botoesExcluir = document.querySelectorAll('.botao-excluir');
         const botoesEditar = document.querySelectorAll('.botao-editar');
-
-     
 
         botoesExcluir.forEach(botao => {
             botao.addEventListener('click', function () {
@@ -66,7 +64,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const tipoInput = document.getElementById('tipo');
     const porteInput = document.getElementById('porte');
     const idadeInput = document.getElementById('idade');
-    const fotoInput = document.getElementById('foto');
+    const descInput = document.getElementById('desc');
     const castradoInput = document.querySelector('input[name="castrado"]:checked');
     const vacinadoInput = document.querySelector('input[name="vacinado"]:checked');
 
@@ -75,7 +73,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const tipo = tipoInput.value;
     const porte = porteInput.value;
     const idade = idadeInput.value;
-    const foto = fotoInput.value;
+    const desc = descInput.value;
     const castrado = castradoInput.value;
     const vacinado = vacinadoInput.value;
 
@@ -89,7 +87,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
             tipo: tipo,
             porte: porte,
             idade: idade,
-            foto: foto,
+            desc: desc,
             castrado: castrado,
             vacinado: vacinado
         })
@@ -101,7 +99,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
         tipoInput.value = '';
         porteInput.value = '';
         idadeInput.value = '';
-        fotoInput.value = '';
+        descInput.value = '';
         castradoInput.value = '';
         vacinadoInput.value = '';
     })
