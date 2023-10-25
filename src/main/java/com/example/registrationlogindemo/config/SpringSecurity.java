@@ -30,7 +30,6 @@ public class SpringSecurity {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((authorize) ->
                         authorize.requestMatchers("/css/**","/img/**", "/js/**").permitAll()// precisa ficar em primeiro
-                                .requestMatchers("/register/**").permitAll()
                                 .requestMatchers("/index").permitAll()
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/users").hasRole("ADMIN")
@@ -38,6 +37,7 @@ public class SpringSecurity {
                                 .requestMatchers("/interesse/**").hasRole("ADMIN")
                                 .requestMatchers("/CadastroAnimais").hasRole("ADMIN")
                                 .requestMatchers("/Interessados").hasRole("ADMIN")
+                                .requestMatchers("/register").hasRole("ADMIN")
                                  .requestMatchers("/upload").hasRole("ADMIN")
                 ).formLogin(
                 form -> form

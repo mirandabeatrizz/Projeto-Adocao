@@ -76,6 +76,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const desc = descInput.value;
     const castrado = castradoInput.value;
     const vacinado = vacinadoInput.value;
+    const teste = 0;
 
     fetch('/animais/adicionar', {
         method: 'POST',
@@ -90,6 +91,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
             desc: desc,
             castrado: castrado,
             vacinado: vacinado
+            
         })
     })
     .then(response => response.json())
