@@ -53,11 +53,4 @@ function listarUsers(){
         console.error('Erro ao listar usuários:', error);
     });
 }
- const abrirBtn = document.getElementById('abrir');
- const formulario = document.getElementById('formTeste');
-
- abrirBtn.addEventListener('click', ()=> {
-    formulario.style.display='block';
- });
-
 listarUsers();
