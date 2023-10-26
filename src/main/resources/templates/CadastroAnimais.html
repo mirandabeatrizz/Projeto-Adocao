@@ -10,8 +10,20 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+    <div class="navbar">
+        <div class="conteudomenu">
+            <div class="logo">
+                <img src="" alt="">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a class="item-menu" href="">Usuários</a></li>
+                    <li><a class="item-menu" href="">Animais</a></li>
+                    <li><a  class="item-menu" href="">Interessados</a></li>
+                </ul>
+            </nav>
+        </div>
+       <!-- <div class="container-fluid">
             <a class="navbar-brand" href="#">Sistema de Registro e Login</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,10 +43,13 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </div>-->
+    </div>
+
+    <section class="container">
     <h1 class="page-title">Cadastro de Animais</h1>
-    <button id="btnAbrir">Abrir</button>
+    <div class="addAni">    <button id="btnAbrir">Adicionar Animal</button></div>
+
     <!-- Formulário para adicionar um novo animal -->
 
     <!-- <form id="formAddAnimais" class="formulario">
@@ -164,6 +179,25 @@
     </div>
     <script src="../static/js/script.js"></script>
     <style>
+        .navbar{
+            position: fixed;
+            height: 100%;
+            justify-content: center;
+            background-color: #6b6a6a;
+            padding: 20px;
+        }
+        .navbar ul li{
+            list-style: none;
+        }
+        .navbar ul li a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            float: right;
+        }
         #popup {
             position: fixed;
             width: 100%;
@@ -176,12 +210,12 @@
 
         .conteudoForm {
             background-color: #fff;
-            width: 400px;
-            padding: 20px;
+            width: 39%;
+            padding: 29px 53px;
             display: flex;
             flex-direction: column;
             margin: auto;
-            border-radius: 5px;
+            border-radius: 13px;
             transition: .3s;
         }
         .conteudoForm h2{
@@ -208,7 +242,7 @@
         .radio{
             flex-direction: row;
         }
-        button{
+        .conteudoForm button{
             border: none;
             margin: 10px 0px;
             padding: 10px;
@@ -220,8 +254,24 @@
            box-shadow: 5px 5px #000;
                 
         }
-    </style>
+        .addAni{
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+        }
+        .addAni button{
+        border: none;
+        margin-right: 3%;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        width: 15%;
+        justify-content: center;
 
+        }
+        
+    </style>
+</section>
 </body>
 
 </html>
