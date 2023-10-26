@@ -49,7 +49,13 @@
     <section class="container">
     <h1 class="page-title">Cadastro de Animais</h1>
     <div class="addAni">    <button id="btnAbrir">Adicionar Animal</button></div>
-
+    
+    <div class="upload">
+        <form action="POST" action="/upload">
+            <input type="file" name="file" id="file">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
     <!-- Formulário para adicionar um novo animal -->
 
     <!-- <form id="formAddAnimais" class="formulario">
