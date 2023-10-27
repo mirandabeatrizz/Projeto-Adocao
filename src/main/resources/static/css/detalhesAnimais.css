@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #63724F;
+}
+.menu .conteudo-menu{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 4%;
+}
+
+.menu .conteudo-menu ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.menu .conteudo-menu ul li{
+    padding: 10px;
+   
+}
+.menu .conteudo-menu ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 6% 0;
+}
+
+.container .card{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    background-color: #b9c4ac;
+    border-radius: 10px;
+}
+.container .card .imgs{
+    width: 43%;
+}
+.container .card .infos{
+    width: 50%;
+}
+.container .card .infos .btn-adotar{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.container .card .infos .btn-adotar button{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 115px;
+}
+.container .card .infos .btn-adotar button:hover{
+    background-color: #63724F;
+    color: #fff;
+    
+}
+.container .card .infos .btn-adotar button a{
+    text-decoration: none;
+    color: #000;
+}
+.container .card .infos .btn-adotar button a:hover{
+    
+}
+
+#form-popup{
+             position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.473);
+            z-index: 20;
+            top: 0;
+            left: 0;
+}
+

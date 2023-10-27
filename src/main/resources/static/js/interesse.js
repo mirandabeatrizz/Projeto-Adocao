@@ -1,4 +1,4 @@
-document.getElementById('addInteresse').addEventListener('click', function(){
+/*document.getElementById('addInteresse').addEventListener('click', function(){
     const nomeInput = documento.getElementById('nome');
     const cpfInput = document.getElementById('cpf');
     const emailInput = document.getElementById('email');
@@ -42,4 +42,11 @@ document.getElementById('addInteresse').addEventListener('click', function(){
     .catch(error => {
         console.error('Erro ao adicionar interesse:', error);
     });
+});*/
+
+const abrirFormInteresse = document.getElementById('abrirFormInteresse');
+const formpopup = document.getElementById('formpopup');
+
+abrirFormInteresse.addEventListener('click', ()=>{
+    formpopup.style.display='flex';
 });
