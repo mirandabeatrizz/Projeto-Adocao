@@ -44,9 +44,9 @@
     });
 });*/
 
-const abrirFormInteresse = document.getElementById('abrirFormInteresse');
-const formpopup = document.getElementById('formpopup');
+const abrirInteresse = document.getElementById('abrirFormInteresse');
+const formPopup = document.getElementById('formpopup');
 
-abrirFormInteresse.addEventListener('click', ()=>{
-    formpopup.style.display='flex';
+abrirInteresse.addEventListener('click', ()=>{
+    formPopup.style.display='flex';
 });

@@ -29,6 +29,9 @@ body{
     text-decoration: none;
     color: #fff;
 }
+.menu .conteudo-menu ul li a:hover{
+    color: #afbb9f;
+}
 
 .container{
     display: flex;
@@ -70,17 +73,62 @@ body{
     text-decoration: none;
     color: #000;
 }
-.container .card .infos .btn-adotar button a:hover{
-    
-}
 
-#form-popup{
-             position: fixed;
+#formpopup{
+            position: fixed;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.473);
             z-index: 20;
             top: 0;
             left: 0;
+}
+.conteudoForm {
+    background-color: #fff;
+    width: 32%;
+    padding: 29px 53px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 13px;
+    transition: .3s;
+}
+.conteudoForm h2{
+    text-align: center;
+}
+.conteudoForm p{
+    text-align: center;
+    margin: 0;
+}
+.item {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.item input{
+    border: none;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.item button{
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #b9c4ac;
+}
+.item button:hover{
+    background-color: #63724F;
+    color: #fff;
+    box-shadow: 5px 5px #000;
+   
+}
+.item:last-child{
+   align-items: center;
+   display: flex;
+   margin-top: 10px;
 }
 
