@@ -31,6 +31,7 @@ public class SpringSecurity {
                 .authorizeHttpRequests((authorize) ->
                         authorize.requestMatchers("/css/**","/img/**", "/js/**").permitAll()// precisa ficar em primeiro
                                 .requestMatchers("/index").permitAll()
+                                .requestMatchers("/DetalhesAnimais").permitAll()
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/users").hasRole("ADMIN")
                                 .requestMatchers("/animais/**").hasRole("ADMIN")
@@ -43,7 +44,7 @@ public class SpringSecurity {
                 form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/CadastroAnimais")
+                        .defaultSuccessUrl("/users")
                         .permitAll()
         ).logout(
                 logout -> logout

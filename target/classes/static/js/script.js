@@ -1,4 +1,3 @@
-
 //LISTAR ANIMAIS CADASTRADOS
 function listarAnimais(){
     fetch('/animais/listar')
@@ -64,19 +63,19 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const tipoInput = document.getElementById('tipo');
     const porteInput = document.getElementById('porte');
     const idadeInput = document.getElementById('idade');
-    const descInput = document.getElementById('desc');
     const castradoInput = document.querySelector('input[name="castrado"]:checked');
     const vacinadoInput = document.querySelector('input[name="vacinado"]:checked');
+    const descInput = document.getElementById('desc');
 
 
     const nome = nomeInput.value;
     const tipo = tipoInput.value;
     const porte = porteInput.value;
     const idade = idadeInput.value;
-    const desc = descInput.value;
     const castrado = castradoInput.value;
     const vacinado = vacinadoInput.value;
-    const teste = 0;
+    const desc = descInput.value;
+    
 
     fetch('/animais/adicionar', {
         method: 'POST',
@@ -88,9 +87,9 @@ document.getElementById('addAnimais').addEventListener('click', function(){
             tipo: tipo,
             porte: porte,
             idade: idade,
-            desc: desc,
             castrado: castrado,
-            vacinado: vacinado
+            vacinado: vacinado,
+            desc: desc
             
         })
     })
@@ -101,14 +100,27 @@ document.getElementById('addAnimais').addEventListener('click', function(){
         tipoInput.value = '';
         porteInput.value = '';
         idadeInput.value = '';
-        descInput.value = '';
         castradoInput.value = '';
         vacinadoInput.value = '';
+        descInput.value = '';
     })
     .catch(error => {
         console.error('Erro ao adicionar animal:', error);
     });
 
+});
+
+
+const abrirBtn = document.getElementById('btnAbrir');
+const popup = document.getElementById('popup');
+const fecharBtn = document.getElementById('addAnimais');
+
+abrirBtn.addEventListener('click', ()=>{
+    popup.style.display='flex';
+});
+
+fecharBtn.addEventListener('click', ()=>{
+    popup.style.display='none';
 });
 
 listarAnimais();

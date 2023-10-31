@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Cadastro de Animais</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+    <div class="navbar">
+        <div class="conteudomenu">
+            <div class="logo">
+                <img src="" alt="">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a class="item-menu" href="">Usuários</a></li>
+                    <li><a class="item-menu" href="">Animais</a></li>
+                    <li><a  class="item-menu" href="">Interessados</a></li>
+                </ul>
+            </nav>
+        </div>
+       <!-- <div class="container-fluid">
             <a class="navbar-brand" href="#">Sistema de Registro e Login</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,12 +43,22 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </div>-->
+    </div>
+
+    <section class="container">
     <h1 class="page-title">Cadastro de Animais</h1>
-    <!-- Formulário para adicionar um novo animal -->
-    <h2 class="section-title">Novo Animal</h2>
-    <form id="formAddAnimais" class="formulario">
+    <div class="addAni">    <button id="btnAbrir">Adicionar Animal</button></div>
+    
+    <!--<div class="upload">
+        <form action="POST" action="/upload">
+            <input type="file" name="file" id="file">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+     Formulário para adicionar um novo animal -->
+
+    <!-- <form id="formAddAnimais" class="formulario">
         <div class="form-group">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" class="form-input" required>
@@ -85,26 +107,196 @@
         <div class="form-group">
             <button type="button" id="addAnimais" class="flat-button">Adicionar Animal</button>
         </div>
-    </form>
-      <!-- Lista de Animais -->
-      <h2 class="section-title">Lista de Animais</h2>
-      <table class="tabela">
-          <thead>
-              <tr>
-                  <th>Nome</th>
-                  <th>Tipo</th>
-                  <th>Porte</th>
-                  <th>Idade</th>
-                  <th>Descrição</th>
-                  <th>Castrado</th>
-                  <th>Vacinado</th> 
-                  <th>Ações</th><!-- Coluna para ações -->
-              </tr>
-          </thead>
-          <tbody id="listaAnimais"></tbody>
-      </table>
-    <script src="/js/script.js"></script>
+    </form> -->
+    <!-- Lista de Animais -->
+    <h2 class="section-title">Lista de Animais</h2>
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Porte</th>
+                <th>Idade</th>
+                <th>Descrição</th>
+                <th>Castrado</th>
+                <th>Vacinado</th>
+                <th>Ações</th><!-- Coluna para ações -->
+            </tr>
+        </thead>
+        <tbody id="listaAnimais"></tbody>
+    </table>
 
+    <div id="popup" style="display: none;">
+        <!--<form action="" class="conteudoForm">
+            <label for="">Nome</label>
+            <input type="text">
+            <label for="">Email</label>
+            <input type="text" name="" id="">
+            <button id="btnFechar">Fechar</button>
+        </form>-->
+        <form id="formAddAnimais" class="formulario conteudoForm">
+            <h2 class="section-title">Novo Animal</h2>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" class="form-input" placeholder="Digite o nome do animal...">
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo" class="form-input" required>
+                    <option id="gato">Gato</option>
+                    <option id="cachorro">Cachorro</option>
+                    <option id="outros">Outros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="porte">Porte:</label>
+                <select type="text" id="porte" class="form-input" required>
+                    <option id="pequeno">Pequeno</option>
+                    <option id="medio">Médio</option>
+                    <option id="grande">Grande</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="text" id="idade" class="form-input" placeholder="Informe a idade do animal...">
+            </div>
+            <div class="form-group">
+                <label for="desc">Descrição:</label>
+                <textarea name="desc" id="desc"  cols="30" rows="10" placeholder="Faça uma descrição do animal..."></textarea>
+            </div>
+            <div class="form-group radio">
+                <label for="castrado">Castrado:</label>
+                <input type="radio" required value="sim Cadastrado" name="castrado" id="castrado" class="form-input">Sim
+                <input type="radio" required value="nao Cadastrado" name="castrado" id="castrado" class="form-input">Não
+            </div>
+            <div class="form-group radio">
+                <label for="vacinado">Vacinado:</label>
+                    <input type="radio" required value="sim Vacinado" name="vacinado" id="vacinado" class="form-input"
+                        step="0.01">Sim
+                    <input type="radio" required value="nao Vacinado" name="vacinado" id="vacinado" class="form-input"
+                        step="0.01">Não
+            </div>
+
+            <div class="form-group">
+                <button type="button" id="addAnimais" class="flat-button">Adicionar Animal</button>
+            </div>
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+    <style>
+        .navbar{
+            position: fixed;
+            height: 100%;
+            justify-content: center;
+            background-color: #6b6a6a;
+            padding: 20px;
+            width: 13%;
+            align-items: flex-start;
+        }
+        .navbar ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar ul li{
+            list-style: none;
+            margin: 20px 0;
+        }
+        .navbar ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 29px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            padding: 5% 0 0 4%;
+        
+        }
+        #popup {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.473);
+            z-index: 20;
+            top: 0;
+            left: 0;
+            
+        }
+
+        .conteudoForm {
+            background-color: #fff;
+            width: 32%;
+            padding: 29px 53px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            border-radius: 13px;
+            transition: .3s;
+        }
+        .conteudoForm h2{
+            text-align: center;
+        }
+
+        .radio input {
+            margin: 0px 10px;
+        }
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0px;
+        }
+        select{
+            color: #6b6a6a;
+        }
+        input, select, optgroup, textarea{
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(177, 177, 177, 0.507);
+        }
+        .radio{
+            flex-direction: row;
+        }
+        .conteudoForm button{
+            border: none;
+            margin: 10px 0px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .conteudoForm button:hover{
+           background-color: rgb(104, 155, 89);
+           color: #fff;
+           box-shadow: 5px 5px #000;
+                
+        }
+        .addAni{
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+        }
+        .addAni button{
+        border: none;
+        margin-right: 3%;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        width: 15%;
+        justify-content: center;
+
+        }
+
+        @media(min-width: 1200px){
+            .container{
+                max-width: 87%;
+                float: right;
+            }
+        }
+        
+    </style>
+</section>
 </body>
 
 </html>
