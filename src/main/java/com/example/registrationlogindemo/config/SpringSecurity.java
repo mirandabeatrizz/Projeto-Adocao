@@ -29,9 +29,9 @@ public class SpringSecurity {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { //filtros
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((authorize) ->
-                        authorize.requestMatchers("/css/**","/img/**", "/js/**").permitAll()// precisa ficar em primeiro
+                        authorize.requestMatchers("/css/**","/img/**", "/js/**").permitAll() // precisa ficar em primeiro
+                                 .requestMatchers("/DetalhesAnimal").permitAll()
                                 .requestMatchers("/index").permitAll()
-                                .requestMatchers("/DetalhesAnimais").permitAll()
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/users").hasRole("ADMIN")
                                 .requestMatchers("/animais/**").hasRole("ADMIN")
