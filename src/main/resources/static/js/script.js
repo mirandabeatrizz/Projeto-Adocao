@@ -65,8 +65,8 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const idadeInput = document.getElementById('idade');
     const castradoInput = document.querySelector('input[name="castrado"]:checked');
     const vacinadoInput = document.querySelector('input[name="vacinado"]:checked');
-    const descInput = document.getElementById('desc');
-
+    const descInput = document.getElementById('descricao');
+    //const fileInput1 = document.getElementById('file1');
 
     const nome = nomeInput.value;
     const tipo = tipoInput.value;
@@ -74,8 +74,10 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const idade = idadeInput.value;
     const castrado = castradoInput.value;
     const vacinado = vacinadoInput.value;
-    const desc = descInput.value;
-    
+    const descricao = descInput.value;
+
+
+    console.log(file1);
 
     fetch('/animais/adicionar', {
         method: 'POST',
@@ -89,10 +91,12 @@ document.getElementById('addAnimais').addEventListener('click', function(){
             idade: idade,
             castrado: castrado,
             vacinado: vacinado,
-            desc: desc
+            descricao: descricao
             
         })
     })
+
+   
     .then(response => response.json())
     .then(data => {
         window.confirm(`Animal ${data.nome} adicionado com sucesso`);

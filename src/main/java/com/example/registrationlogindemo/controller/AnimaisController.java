@@ -1,5 +1,6 @@
 package com.example.registrationlogindemo.controller;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.registrationlogindemo.entity.Animais;
 import com.example.registrationlogindemo.repository.AnimaisRepository;
@@ -31,6 +33,7 @@ public class AnimaisController {
     
     @PostMapping("/adicionar")
     public Animais adicionarAnimais(@RequestBody Animais animais){
+        
         return animaisRepository.save(animais);
     }
 
@@ -43,13 +46,15 @@ public class AnimaisController {
             animais.setIdade(novoAnimal.getIdade());
             animais.setCastrado(novoAnimal.getCastrado());
             animais.setVacinado(novoAnimal.getVacinado());
-            animais.setDesc(novoAnimal.getDesc());
+            animais.setDescricao(novoAnimal.getDescricao());
             return animaisRepository.save(animais);
         })
         .orElseGet(() ->{
             novoAnimal.setId(id);
             return animaisRepository.save(novoAnimal);
         });
+
+        
     }
 
     @GetMapping("/listar")

@@ -37,7 +37,7 @@ public class UploadController {
             e.printStackTrace();
         }
 
-        return "redirect:/";
+        return uploadPath + file.getOriginalFilename();
     }
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -161,8 +161,8 @@
                 <input type="text" id="idade" class="form-input" placeholder="Informe a idade do animal...">
             </div>
             <div class="form-group">
-                <label for="desc">Descrição:</label>
-                <textarea name="desc" id="desc"  cols="30" rows="10" placeholder="Faça uma descrição do animal..."></textarea>
+                <label for="descricao">Descrição:</label>
+                <textarea name="descricao" id="descricao"  cols="30" rows="10" placeholder="Faça uma descrição do animal..."></textarea>
             </div>
             <div class="form-group radio">
                 <label for="castrado">Castrado:</label>
@@ -176,11 +176,16 @@
                     <input type="radio" required value="nao Vacinado" name="vacinado" id="vacinado" class="form-input"
                         step="0.01">Não
             </div>
-
+            <div class="form-group">
+                <input type="file" multiple="multiple" name="file1" id="file1"/>
+            </div>
+            
             <div class="form-group">
                 <button type="button" id="addAnimais" class="flat-button">Adicionar Animal</button>
             </div>
         </form>
+    
+        
     </div>
     <script src="/js/script.js"></script>
     <style>

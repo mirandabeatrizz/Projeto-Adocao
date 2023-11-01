@@ -1,28 +1,32 @@
 package com.example.registrationlogindemo.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="animais")
+@Table(name = "animais")
 public class Animais {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(nullable = false, length = 100)
     private String nome;
 
@@ -42,6 +46,14 @@ public class Animais {
     private String vacinado;
 
     @Column(length = 350)
-    private String desc;
+    private String descricao;
+
+    private String file1;
+    private String file2;
+    private String file3;
+
+    @OneToMany
+    @JoinColumn(name = "animais_id")
+    private List<Imagens> listaImagens = new ArrayList<Imagens>();
 
 }
