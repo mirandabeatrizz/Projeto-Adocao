@@ -45,15 +45,11 @@ public class Animais {
     @Column(nullable = false, length = 100)
     private String vacinado;
 
-    @Column(length = 350)
+    @Column(nullable = false, length = 500)
     private String descricao;
 
     private String file1;
     private String file2;
     private String file3;
-
-    @OneToMany
-    @JoinColumn(name = "animais_id")
-    private List<Imagens> listaImagens = new ArrayList<Imagens>();
 
 }

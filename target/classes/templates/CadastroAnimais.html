@@ -23,92 +23,11 @@
                 </ul>
             </nav>
         </div>
-       <!-- <div class="container-fluid">
-            <a class="navbar-brand" href="#">Sistema de Registro e Login</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/users}">Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/Interessados}">Interessados</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/logout}">Sair</a>
-                    </li>
-                </ul>
-            </div>
-        </div>-->
     </div>
-
     <section class="container">
     <h1 class="page-title">Cadastro de Animais</h1>
     <div class="addAni">    <button id="btnAbrir">Adicionar Animal</button></div>
     
-    <!--<div class="upload">
-        <form action="POST" action="/upload">
-            <input type="file" name="file" id="file">
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
-     Formulário para adicionar um novo animal -->
-
-    <!-- <form id="formAddAnimais" class="formulario">
-        <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" class="form-input" required>
-        </div>
-        <div class="form-group">
-            <label for="tipo">Tipo:</label>
-            <select name="tipo" id="tipo" class="form-input" required>
-                <option id="gato">Gato</option>
-                <option id="cachorro">Cachorro</option>
-                <option id="outros">Outros</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="porte">Porte:</label>
-            <select type="text" id="porte" class="form-input" required>
-                <option id="pequeno">Pequeno</option>
-                <option id="medio">Médio</option>
-                <option id="grande">Grande</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="idade">Idade:</label>
-            <input type="text" id="idade" class="form-input" required>
-        </div>
-        <div class="form-group">
-            <label for="desc">Descrição:</label>
-            <input type="text" id="desc" class="form-input" required>
-        </div>
-        <div class="form-group">
-            <label for="castrado">Castrado:</label>
-            <input type="radio" required value="sim Cadastrado" name="castrado" id="castrado"
-                class="form-input">Sim
-            <input type="radio" required value="nao Cadastrado" name="castrado" id="castrado"
-                class="form-input">Não
-        </div>
-        <div class="form-group">
-            <label for="vacinado">Vacinado:</label>
-            <div class="group">
-                <input type="radio" required value="sim Vacinado" name="vacinado" id="vacinado" class="form-input"
-                    step="0.01">Sim
-                <input type="radio" required value="nao Vacinado" name="vacinado" id="vacinado" class="form-input"
-                    step="0.01">Não
-                </div>
-        </div>
-
-        <div class="form-group">
-            <button type="button" id="addAnimais" class="flat-button">Adicionar Animal</button>
-        </div>
-    </form> -->
-    <!-- Lista de Animais -->
     <h2 class="section-title">Lista de Animais</h2>
     <table class="tabela">
         <thead>
@@ -127,14 +46,7 @@
     </table>
 
     <div id="popup" style="display: none;">
-        <!--<form action="" class="conteudoForm">
-            <label for="">Nome</label>
-            <input type="text">
-            <label for="">Email</label>
-            <input type="text" name="" id="">
-            <button id="btnFechar">Fechar</button>
-        </form>-->
-        <form id="formAddAnimais" class="formulario conteudoForm">
+        <form id="formAddAnimais" class="formulario conteudoForm" method="POST" action="/upload" enctype="multipart/form-data">
             <h2 class="section-title">Novo Animal</h2>
             <div class="form-group">
                 <label for="nome">Nome:</label>
@@ -158,7 +70,7 @@
             </div>
             <div class="form-group">
                 <label for="idade">Idade:</label>
-                <input type="text" id="idade" class="form-input" placeholder="Informe a idade do animal...">
+                <input type="number" id="idade" class="form-input" placeholder="Informe a idade do animal...">
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
@@ -166,18 +78,19 @@
             </div>
             <div class="form-group radio">
                 <label for="castrado">Castrado:</label>
-                <input type="radio" required value="sim Cadastrado" name="castrado" id="castrado" class="form-input">Sim
-                <input type="radio" required value="nao Cadastrado" name="castrado" id="castrado" class="form-input">Não
+                <input type="radio"  value="sim Cadastrado" name="castrado" id="castrado" class="form-input">Sim
+                <input type="radio"  value="nao Cadastrado" name="castrado" id="castrado" class="form-input">Não
             </div>
             <div class="form-group radio">
                 <label for="vacinado">Vacinado:</label>
-                    <input type="radio" required value="sim Vacinado" name="vacinado" id="vacinado" class="form-input"
+                    <input type="radio" value="sim Vacinado" name="vacinado" id="vacinado" class="form-input"
                         step="0.01">Sim
-                    <input type="radio" required value="nao Vacinado" name="vacinado" id="vacinado" class="form-input"
+                    <input type="radio" value="nao Vacinado" name="vacinado" id="vacinado" class="form-input"
                         step="0.01">Não
             </div>
             <div class="form-group">
-                <input type="file" multiple="multiple" name="file1" id="file1"/>
+                <input type="file" multiple="multiple" name="file" id="file1"/>
+                <input type="submit" class="input-file-button" id="addImgs" value="Enviar" />
             </div>
             
             <div class="form-group">
@@ -290,7 +203,6 @@
         display: flex;
         width: 15%;
         justify-content: center;
-
         }
 
         @media(min-width: 1200px){

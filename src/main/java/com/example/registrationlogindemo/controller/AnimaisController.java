@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.registrationlogindemo.entity.Animais;
+import com.example.registrationlogindemo.entity.Imagens;
 import com.example.registrationlogindemo.repository.AnimaisRepository;
+import com.example.registrationlogindemo.repository.ImagemRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -27,13 +29,20 @@ public class AnimaisController {
     @Autowired
     private AnimaisRepository animaisRepository;
 
+    @Autowired
+    private ImagemRepository imagensRepository;
+
+
     public AnimaisController(AnimaisRepository animaisRepository){
         this.animaisRepository = animaisRepository;
     }
     
     @PostMapping("/adicionar")
-    public Animais adicionarAnimais(@RequestBody Animais animais){
-        
+    public Animais adicionarAnimais(@RequestBody Animais animais){        
+        animais.setFile1(UploadController.getListaImagems().get(0).getCaminho());
+        animais.setFile2(UploadController.getListaImagems().get(1).getCaminho());
+        animais.setFile3(UploadController.getListaImagems().get(2).getCaminho());
+        UploadController.zerarLista();
         return animaisRepository.save(animais);
     }
 
