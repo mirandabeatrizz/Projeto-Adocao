@@ -8,12 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.UrlResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.http.HttpHeaders;
 
 import com.example.registrationlogindemo.entity.Animais;
 import com.example.registrationlogindemo.entity.Imagens;
@@ -57,6 +63,19 @@ public class UploadController {
 
     public static void zerarLista(){
         listaImagems = new ArrayList<Imagens>();
+    }
+     @GetMapping("/download/{fileName:.+}")
+    public ResponseEntity<Resource> downloadFile(@PathVariable String fileName) throws IOException {
+        Path filePath = Paths.get(uploadPath).resolve(fileName);
+        Resource resource = new UrlResource(filePath.toUri());
+
+        if (resource.exists()) {
+            return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                    .body(resource);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +23,12 @@
 
     <section class="container">
         <div class="card">
-            <div class="imgs"><img src="" alt="imagem do animal"></div>
+            <div class="imgs">
+                <!--<img src="" alt="imagem do animal">-->
+            </div>
        
             <div class="infos">
-                <h3>Nome do Animal:</h3>
+                <h3>Nome do Animal:<span th:text="${animal.nome}"></span></h3>
                 <p>Tipo do animal:</p>
                 <p>Idade do animal:</p>
                 <p>Vacinado:</p>
@@ -36,7 +38,6 @@
                     <button id="abrirFormInteresse">Adotar</button>
                 </div>
             </div>
-           
     </div>
     </section>
 

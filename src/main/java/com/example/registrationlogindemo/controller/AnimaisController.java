@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,10 +30,6 @@ public class AnimaisController {
     @Autowired
     private AnimaisRepository animaisRepository;
 
-    @Autowired
-    private ImagemRepository imagensRepository;
-
-
     public AnimaisController(AnimaisRepository animaisRepository){
         this.animaisRepository = animaisRepository;
     }
@@ -42,8 +39,8 @@ public class AnimaisController {
         animais.setFile1(UploadController.getListaImagems().get(0).getCaminho());
         animais.setFile2(UploadController.getListaImagems().get(1).getCaminho());
         animais.setFile3(UploadController.getListaImagems().get(2).getCaminho());
-        UploadController.zerarLista();
         return animaisRepository.save(animais);
+        //UploadController.zerarLista();
     }
 
     @PutMapping("/editar/{id}")
@@ -62,8 +59,6 @@ public class AnimaisController {
             novoAnimal.setId(id);
             return animaisRepository.save(novoAnimal);
         });
-
-        
     }
 
     @GetMapping("/listar")
@@ -74,13 +69,13 @@ public class AnimaisController {
     @GetMapping("/buscar/{id}")
     public Optional<Animais> buscarAutor(@PathVariable Long id){
         return animaisRepository.findById(id);
-        //throw new EntityNotFoundException();
     }
 
      @DeleteMapping("/excluir/{id}")
     public void excluirAnimais(@PathVariable Long id){
         animaisRepository.deleteById(id);
-       // throw new EntityNotFoundException();
     }
+
+
     
 }

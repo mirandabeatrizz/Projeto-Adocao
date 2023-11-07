@@ -15,6 +15,11 @@ public class SiteController {
     public String addAnimais(){
         return"CadastroAnimais";
     }
+    @GetMapping("/DetalhesAnimal")
+    public String DetalhesAnimal(){
+        return"DetalhesAnimal";
+    }
+    
   
     
   

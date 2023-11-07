@@ -24,47 +24,15 @@ function listarAnimais(){
         });
         //BOTÃO PRA CHAMAR O EXCLUIR
         const botoesExcluir = document.querySelectorAll('.botao-excluir');
-        const botoesEditar = document.getElementById('editar');
-        const popup = document.getElementById('popup');
+        const botoesEditar = document.querySelectorAll('.botao-editar');
 
-        botoesEditar.addEventListener('click', function(){
-            popup.style.display='flex';
-            const nomeInput = document.getElementById('nome');
-            const tipoInput = document.getElementById('tipo');
-            const porteInput = document.getElementById('porte');
-            const idadeInput = document.getElementById('idade');
-            const castradoInput = document.querySelector('input[name="castrado"]:checked');
-            const vacinadoInput = document.querySelector('input[name="vacinado"]:checked');
-            const descricaoInput = document.getElementById('descricao');
-            
-
-            const nome = nomeInput.value;
-            const tipo = tipoInput.value;
-            const porte = porteInput.value;
-            const idade = idadeInput.value;
-            const castrado = castradoInput.value;
-            const vacinado = vacinadoInput.value;
-            const descricao = descricaoInput.value;
-
-            fetch(`/animais/editar/${id}`, {
-                method: 'UPDATE',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    nome: nome,
-                    tipo: tipo,
-                    porte: porte,
-                    idade: idade,
-                    descricao: descricao,
-                    castrado: castrado,
-                    vacinado: vacinado
-                    
-                    
-                })
-            })
-            .then(response => response.json())
+        botoesEditar.forEach(botao => {
+            botao.addEventListener('click', function() {
+                const id = botao.getAttribute('data-id');
+                abrirFormularioEdicao(id);
+            });
         });
+
         botoesExcluir.forEach(botao => {
             botao.addEventListener('click', function () {
                 const id = botao.getAttribute('data-id');
@@ -94,9 +62,82 @@ function listarAnimais(){
 
     })
     .catch(error => {
-        console.error('Erro ao listar produtos:', error);
+        console.error('Erro ao listar animais:', error);
     });
 }
+function abrirFormularioEdicao(id) {
+    // Aqui, você deve obter as informações do animal com o ID fornecido
+    fetch(`/animais/buscar/${id}`)
+    .then(response => response.json())
+    .then(animal => {
+        const formularioEdicao = document.getElementById('formularioEdicao');
+        formularioEdicao.style.display = 'flex';
+        
+        const nomeInput = document.getElementById('nome');
+        const tipoInput = document.getElementById('tipo');
+        const porteInput = document.getElementById('porte');
+        const idadeInput = document.getElementById('idade');
+        const descricaoInput = document.getElementById('descricao');
+        const castradoInput = document.getElementById('castrado');
+        const vacinadoInput = document.getElementById('vacinado');
+        document.getElementById('animalId').value = id;
+        
+        // Preencha os campos do formulário com as informações do animal
+        nomeInput.value = animal.nome;
+        tipoInput.value = animal.tipo;
+        porteInput.value = animal.porte;
+        idadeInput.value = animal.idade;
+        descricaoInput.value = animal.descricao;
+        castradoInput.checked = animal.castrado;
+        vacinadoInput.checked = animal.vacinado;
+        
+        // Adicione um evento de clique ao botão "Salvar" para enviar a atualização
+        const botaoSalvar = document.getElementById('botaoSalvar');
+        
+        botaoSalvar.addEventListener('click', function() {
+            // Aqui você deve enviar a solicitação de atualização para o servidor
+            const novoNome = nomeInput.value;
+            const novoTipo = tipoInput.value;
+            const novoPorte = porteInput.value;
+            const novaIdade = idadeInput.value;
+            const novaDescricao = descricaoInput.value;
+            const novoCastrado = castradoInput.checked;
+            const novoVacinado = vacinadoInput.checked;
+            
+            fetch(`/animais/editar/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nome: novoNome,
+                    tipo: novoTipo,
+                    porte: novoPorte,
+                    idade: novaIdade,
+                    descricao: novaDescricao,
+                    castrado: novoCastrado,
+                    vacinado: novoVacinado
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(`Animal com ID ${id} editado com sucesso.`);
+                    listarAnimais(); // Atualize a lista de animais após a edição
+                    formularioEdicao.style.display = 'none'; // Feche o formulário de edição
+                } else {
+                    console.error(`Erro ao editar o animal com ID ${id}`);
+                }
+            })
+            .catch(error => {
+                console.error(`Erro ao editar o animal com ID ${id}:`, error);
+            });
+        });
+    })
+    .catch(error => {
+        console.error(`Erro ao obter informações do animal com ID ${id}:`, error);
+    });
+}
+
 
 /*document.getElementById('addImgs').addEventListener('click', function(){
     fetch('upload',{
@@ -113,7 +154,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const castradoInput = document.querySelector('input[name="castrado"]:checked');
     const vacinadoInput = document.querySelector('input[name="vacinado"]:checked');
     const descricaoInput = document.getElementById('descricao');
-    const fileInput1 = document.getElementById('file1');
+    
 
     const nome = nomeInput.value;
     const tipo = tipoInput.value;
