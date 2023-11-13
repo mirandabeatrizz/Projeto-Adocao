@@ -42,7 +42,7 @@ public class AnimaisController {
         return animaisRepository.save(animais);
         //UploadController.zerarLista();
     }
-
+ 
     @PutMapping("/editar/{id}")
     public Animais editarAnimais(@PathVariable Long id, @RequestBody Animais novoAnimal){
         return animaisRepository.findById(id).map(animais -> {
@@ -56,8 +56,9 @@ public class AnimaisController {
             return animaisRepository.save(animais);
         })
         .orElseGet(() ->{
-            novoAnimal.setId(id);
-            return animaisRepository.save(novoAnimal);
+            //novoAnimal.setId(id);
+           // return animaisRepository.save(novoAnimal);
+           throw new EntityNotFoundException();
         });
     }
 

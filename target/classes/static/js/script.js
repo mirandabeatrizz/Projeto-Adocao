@@ -65,11 +65,66 @@ function listarAnimais(){
         console.error('Erro ao listar animais:', error);
     });
 }
+
+const nomeInput = document.getElementById('nome');
+const tipoInput = document.getElementById('tipo');
+const porteInput = document.getElementById('porte');
+const idadeInput = document.getElementById('idade');
+const descricaoInput = document.getElementById('descricao');
+const castradoInput = document.getElementById('castrado');
+const vacinadoInput = document.getElementById('vacinado');
+const animalIdInput = document.getElementById('animalId');
+// Adicione um evento de clique ao botão "Salvar" para enviar a atualização
+
+
+const botaoSalvar = document.getElementById('botaoSalvar');
+botaoSalvar.addEventListener('click', function() {
+    // Aqui você deve enviar a solicitação de atualização para o servidor
+    const id = animalIdInput.value;
+    const novoNome = nomeInput.value;
+    const novoTipo = tipoInput.value;
+    const novoPorte = porteInput.value;
+    const novaIdade = idadeInput.value;
+    const novaDescricao = descricaoInput.value;
+    const novoCastrado = castradoInput.checked;
+    const novoVacinado = vacinadoInput.checked;
+    
+    fetch(`/animais/editar/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nome: novoNome,
+            tipo: novoTipo,
+            porte: novoPorte,
+            idade: novaIdade,
+            descricao: novaDescricao,
+            castrado: novoCastrado,
+            vacinado: novoVacinado
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert(`Animal com ID ${id} editado com sucesso.`);
+            formularioEdicao.style.display = 'none'; // Feche o formulário de edição
+            listarAnimais();// Atualize a lista de animais após a edição
+        } else {
+            console.error(`Erro ao editar o animal com ID ${id}`);
+        }
+    })
+    .catch(error => {
+        console.error(`Erro ao editar o animal com ID ${id}:`, error);
+    });
+});
+
+
 function abrirFormularioEdicao(id) {
     // Aqui, você deve obter as informações do animal com o ID fornecido
     fetch(`/animais/buscar/${id}`)
     .then(response => response.json())
     .then(animal => {
+        
         const formularioEdicao = document.getElementById('formularioEdicao');
         formularioEdicao.style.display = 'flex';
         
@@ -80,6 +135,7 @@ function abrirFormularioEdicao(id) {
         const descricaoInput = document.getElementById('descricao');
         const castradoInput = document.getElementById('castrado');
         const vacinadoInput = document.getElementById('vacinado');
+        
         document.getElementById('animalId').value = id;
         
         // Preencha os campos do formulário com as informações do animal
@@ -91,52 +147,13 @@ function abrirFormularioEdicao(id) {
         castradoInput.checked = animal.castrado;
         vacinadoInput.checked = animal.vacinado;
         
-        // Adicione um evento de clique ao botão "Salvar" para enviar a atualização
-        const botaoSalvar = document.getElementById('botaoSalvar');
-        
-        botaoSalvar.addEventListener('click', function() {
-            // Aqui você deve enviar a solicitação de atualização para o servidor
-            const novoNome = nomeInput.value;
-            const novoTipo = tipoInput.value;
-            const novoPorte = porteInput.value;
-            const novaIdade = idadeInput.value;
-            const novaDescricao = descricaoInput.value;
-            const novoCastrado = castradoInput.checked;
-            const novoVacinado = vacinadoInput.checked;
-            
-            fetch(`/animais/editar/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    nome: novoNome,
-                    tipo: novoTipo,
-                    porte: novoPorte,
-                    idade: novaIdade,
-                    descricao: novaDescricao,
-                    castrado: novoCastrado,
-                    vacinado: novoVacinado
-                })
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert(`Animal com ID ${id} editado com sucesso.`);
-                    listarAnimais(); // Atualize a lista de animais após a edição
-                    formularioEdicao.style.display = 'none'; // Feche o formulário de edição
-                } else {
-                    console.error(`Erro ao editar o animal com ID ${id}`);
-                }
-            })
-            .catch(error => {
-                console.error(`Erro ao editar o animal com ID ${id}:`, error);
-            });
-        });
     })
     .catch(error => {
         console.error(`Erro ao obter informações do animal com ID ${id}:`, error);
     });
 }
+
+
 
 
 /*document.getElementById('addImgs').addEventListener('click', function(){
@@ -155,7 +172,6 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const vacinadoInput = document.querySelector('input[name="vacinado"]:checked');
     const descricaoInput = document.getElementById('descricao');
     
-
     const nome = nomeInput.value;
     const tipo = tipoInput.value;
     const porte = porteInput.value;
@@ -181,8 +197,6 @@ document.getElementById('addAnimais').addEventListener('click', function(){
             
         })
     })
-
-   
     .then(response => response.json())
     .then(data => {
         window.confirm(`Animal ${data.nome} adicionado com sucesso`);
@@ -193,6 +207,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
         castradoInput.value = '';
         vacinadoInput.value = '';
         descricaoInput.value = '';
+        listarAnimais();
     })
     .catch(error => {
         console.error('Erro ao adicionar animal:', error);
