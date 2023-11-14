@@ -1,4 +1,4 @@
-/*document.getElementById('addInteresse').addEventListener('click', function(){
+document.getElementById('addInteresse').addEventListener('click', function(){
     const nomeInput = documento.getElementById('nome');
     const cpfInput = document.getElementById('cpf');
     const emailInput = document.getElementById('email');
@@ -42,7 +42,7 @@
     .catch(error => {
         console.error('Erro ao adicionar interesse:', error);
     });
-});*/
+});
 
 const abrirInteresse = document.getElementById('abrirFormInteresse');
 const formPopup = document.getElementById('formpopup');
