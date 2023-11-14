@@ -66,7 +66,7 @@ function listarAnimais(){
     });
 }
 
-const nomeInput = document.getElementById('nome');
+/*const nomeInput = document.getElementById('nome');
 const tipoInput = document.getElementById('tipo');
 const porteInput = document.getElementById('porte');
 const idadeInput = document.getElementById('idade');
@@ -74,6 +74,7 @@ const descricaoInput = document.getElementById('descricao');
 const castradoInput = document.getElementById('castrado');
 const vacinadoInput = document.getElementById('vacinado');
 const animalIdInput = document.getElementById('animalId');
+*/
 // Adicione um evento de clique ao botão "Salvar" para enviar a atualização
 
 
@@ -152,10 +153,6 @@ function abrirFormularioEdicao(id) {
         console.error(`Erro ao obter informações do animal com ID ${id}:`, error);
     });
 }
-
-
-
-
 /*document.getElementById('addImgs').addEventListener('click', function(){
     fetch('upload',{
         method: 'POST'
@@ -164,13 +161,13 @@ function abrirFormularioEdicao(id) {
 
 //CADASTRAR NOVO ANIMAL
 document.getElementById('addAnimais').addEventListener('click', function(){
-    const nomeInput = document.getElementById('nome');
-    const tipoInput = document.getElementById('tipo');
-    const porteInput = document.getElementById('porte');
-    const idadeInput = document.getElementById('idade');
+    const nomeInput = document.getElementById('nomeAdd');
+    const tipoInput = document.getElementById('tipoAdd');
+    const porteInput = document.getElementById('porteAdd');
+    const idadeInput = document.getElementById('idadeAdd');
     const castradoInput = document.querySelector('input[name="castrado"]:checked');
     const vacinadoInput = document.querySelector('input[name="vacinado"]:checked');
-    const descricaoInput = document.getElementById('descricao');
+    const descricaoInput = document.getElementById('descricaoAdd');
     
     const nome = nomeInput.value;
     const tipo = tipoInput.value;
@@ -200,6 +197,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     .then(response => response.json())
     .then(data => {
         window.confirm(`Animal ${data.nome} adicionado com sucesso`);
+        console
         nomeInput.value = '';
         tipoInput.value = '';
         porteInput.value = '';
