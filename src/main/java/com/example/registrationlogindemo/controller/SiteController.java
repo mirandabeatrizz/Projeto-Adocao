@@ -17,7 +17,7 @@ public class SiteController {
     }
     @GetMapping("/DetalhesAnimal")
     public String DetalhesAnimal(){
-        return "DetalhesAnimal";
+        return"DetalhesAnimal";
     }
     
   

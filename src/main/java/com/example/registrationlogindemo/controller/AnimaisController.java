@@ -66,11 +66,6 @@ public class AnimaisController {
     public List<Animais> listarAnimais(){
         return animaisRepository.findAll();
     }
-    @GetMapping("/detalhesAnimal")
-    public void detalhesAnimal(Model model) {
-        List<Animais> animais = animaisRepository.findAll();
-        model.addAttribute("animais", animais);
-    }
 
     @GetMapping("/buscar/{id}")
     public Optional<Animais> buscarAutor(@PathVariable Long id){
