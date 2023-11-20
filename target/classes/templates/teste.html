@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limite de Arquivos</title>
+</head>
+<body>
+
+<input type="file" id="fileInput" multiple onchange="limitarQuantidadeArquivos(this)">
+<p id="mensagemErro"></p>
+
+<script>
+function limitarQuantidadeArquivos(input) {
+    var maxFiles = 3; // Limite de arquivos desejado
+
+    // Verifica se a propriedade 'files' está definida e a quantidade de arquivos selecionados
+    if (input.files && input.files.length > maxFiles) {
+        input.value = ''; // Limpa os arquivos selecionados
+        document.getElementById('mensagemErro').innerText = 'Você só pode selecionar até ' + maxFiles + ' arquivos.';
+    } else {
+        document.getElementById('mensagemErro').innerText = '';
+    }
+}
+</script>
+
+</body>
+</html>

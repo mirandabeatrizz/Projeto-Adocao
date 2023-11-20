@@ -66,7 +66,7 @@ function listarAnimais(){
     });
 }
 
-/*const nomeInput = document.getElementById('nome');
+const nomeInput = document.getElementById('nome');
 const tipoInput = document.getElementById('tipo');
 const porteInput = document.getElementById('porte');
 const idadeInput = document.getElementById('idade');
@@ -74,11 +74,10 @@ const descricaoInput = document.getElementById('descricao');
 const castradoInput = document.getElementById('castrado');
 const vacinadoInput = document.getElementById('vacinado');
 const animalIdInput = document.getElementById('animalId');
-*/
+
 // Adicione um evento de clique ao botão "Salvar" para enviar a atualização
 
-
-/*const botaoSalvar = document.getElementById('botaoSalvar');
+const botaoSalvar = document.getElementById('botaoSalvar');
 botaoSalvar.addEventListener('click', function() {
     // Aqui você deve enviar a solicitação de atualização para o servidor
     const id = animalIdInput.value;
@@ -117,7 +116,7 @@ botaoSalvar.addEventListener('click', function() {
     .catch(error => {
         console.error(`Erro ao editar o animal com ID ${id}:`, error);
     });
-});*/
+});
 
 function limitarQtdArquivos(files){
     var maximoArq = 3;
@@ -163,11 +162,7 @@ function abrirFormularioEdicao(id) {
         console.error(`Erro ao obter informações do animal com ID ${id}:`, error);
     });
 }
-/*document.getElementById('addImgs').addEventListener('click', function(){
-    fetch('upload',{
-        method: 'POST'
-    })
-})*/
+
 
 //CADASTRAR NOVO ANIMAL
 document.getElementById('addAnimais').addEventListener('click', function(){

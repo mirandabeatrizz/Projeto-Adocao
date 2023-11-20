@@ -66,7 +66,7 @@ function listarAnimais(){
     });
 }
 
-/*const nomeInput = document.getElementById('nome');
+const nomeInput = document.getElementById('nome');
 const tipoInput = document.getElementById('tipo');
 const porteInput = document.getElementById('porte');
 const idadeInput = document.getElementById('idade');
@@ -74,9 +74,8 @@ const descricaoInput = document.getElementById('descricao');
 const castradoInput = document.getElementById('castrado');
 const vacinadoInput = document.getElementById('vacinado');
 const animalIdInput = document.getElementById('animalId');
-*/
-// Adicione um evento de clique ao botão "Salvar" para enviar a atualização
 
+// Adicione um evento de clique ao botão "Salvar" para enviar a atualização
 
 const botaoSalvar = document.getElementById('botaoSalvar');
 botaoSalvar.addEventListener('click', function() {
@@ -119,6 +118,16 @@ botaoSalvar.addEventListener('click', function() {
     });
 });
 
+function limitarQtdArquivos(files){
+    var maximoArq = 3;
+
+    if(files.length > maximoArq){
+        document.getElementById('file1').value = '';
+        document.getElementById('mensagemErro').innerText = 'O máximo de imagens permitidas é de até' + maximoArq;
+    } else{
+        document.getElementById('mensagemErro').innerText = '';
+    }
+}
 
 function abrirFormularioEdicao(id) {
     // Aqui, você deve obter as informações do animal com o ID fornecido
@@ -153,11 +162,7 @@ function abrirFormularioEdicao(id) {
         console.error(`Erro ao obter informações do animal com ID ${id}:`, error);
     });
 }
-/*document.getElementById('addImgs').addEventListener('click', function(){
-    fetch('upload',{
-        method: 'POST'
-    })
-})*/
+
 
 //CADASTRAR NOVO ANIMAL
 document.getElementById('addAnimais').addEventListener('click', function(){
