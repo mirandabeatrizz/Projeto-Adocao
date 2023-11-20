@@ -78,7 +78,7 @@ const animalIdInput = document.getElementById('animalId');
 // Adicione um evento de clique ao botão "Salvar" para enviar a atualização
 
 
-const botaoSalvar = document.getElementById('botaoSalvar');
+/*const botaoSalvar = document.getElementById('botaoSalvar');
 botaoSalvar.addEventListener('click', function() {
     // Aqui você deve enviar a solicitação de atualização para o servidor
     const id = animalIdInput.value;
@@ -117,8 +117,18 @@ botaoSalvar.addEventListener('click', function() {
     .catch(error => {
         console.error(`Erro ao editar o animal com ID ${id}:`, error);
     });
-});
+});*/
 
+function limitarQtdArquivos(files){
+    var maximoArq = 3;
+
+    if(files.length > maximoArq){
+        document.getElementById('file1').value = '';
+        document.getElementById('mensagemErro').innerText = 'O máximo de imagens permitidas é de até' + maximoArq;
+    } else{
+        document.getElementById('mensagemErro').innerText = '';
+    }
+}
 
 function abrirFormularioEdicao(id) {
     // Aqui, você deve obter as informações do animal com o ID fornecido
