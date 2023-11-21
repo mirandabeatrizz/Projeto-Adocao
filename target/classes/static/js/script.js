@@ -146,8 +146,6 @@ document.getElementById('addAnimais').addEventListener('click', function(){
             descricao: descricao,
             castrado: castrado,
             vacinado: vacinado
-            
-            
         })
     })
     .then(response => response.json())

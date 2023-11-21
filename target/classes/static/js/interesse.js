@@ -66,7 +66,7 @@ function mostrarAnimais(){
                     <p>Castrado: ${animal.castrado}</p>
                     <p>Descrição: ${animal.descricao}</p>
                     <div class="btn-adotar">
-                        <button id="abrirFormInteresse">Adotar</button>
+                        <button id="abrirFormInteresse">${animal.id}Adotar</button>
                     </div>
                 </div>
         </div>
@@ -81,19 +81,9 @@ function mostrarAnimais(){
 
 mostrarAnimais();
 
-/*
-
-const nomeInput = document.getElementById('nome');
-const tipoInput = document.getElementById('tipo');
-const porteInput = document.getElementById('porte');
-const idadeInput = document.getElementById('idade');
-const descricaoInput = document.getElementById('descricao');
-const castradoInput = document.getElementById('castrado');
-const vacinadoInput = document.getElementById('vacinado');
-const animalIdInput = document.getElementById('animalId');
 const abrirInteresse = document.getElementById('abrirFormInteresse');
 const formPopup = document.getElementById('formpopup');
 
 abrirInteresse.addEventListener('click', ()=>{
     formPopup.style.display='flex';
-});*/
+});
