@@ -46,12 +46,19 @@ body{
     width: 70%;
     background-color: #b9c4ac;
     border-radius: 10px;
+    padding: 17px;
 }
 .container .card .imgs{
     width: 43%;
+    display: flex;
+}
+.container .card .imgs img{
+    max-width: 100%;
+    max-height: 100%;
 }
 .container .card .infos{
     width: 50%;
+    margin-left: 20px;
 }
 .container .card .infos .btn-adotar{
     display: flex;

@@ -51,8 +51,8 @@ function mostrarAnimais(){
         detalhesAnimais.innerHTML = '';
         
         data.forEach(animal => {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `<section class="container">
+            const div = document.createElement('div');
+            div.innerHTML = `<section class="container">
             <div class="card">
                 <div class="imgs">
                     <img src="${animal.file1}" alt="imagem do animal">
@@ -60,18 +60,18 @@ function mostrarAnimais(){
            
                 <div class="infos">
                     <h3>Nome do Animal: ${animal.nome} </h3>
-                    <p>Tipo do animal:</p>
-                    <p>Idade do animal:</p>
-                    <p>Vacinado:</p>
-                    <p>Castrado:</p>
-                    <p>Descrição:</p>
+                    <p>Tipo do animal: ${animal.tipo}</p>
+                    <p>Idade do animal: ${animal.idade}</p>
+                    <p>Vacinado: ${animal.vacinado}</p>
+                    <p>Castrado: ${animal.castrado}</p>
+                    <p>Descrição: ${animal.descricao}</p>
                     <div class="btn-adotar">
                         <button id="abrirFormInteresse">Adotar</button>
                     </div>
                 </div>
         </div>
         </section>`;
-        detalhesAnimais.appendChild(tr);
+        detalhesAnimais.appendChild(div);
         });
     })
     .catch(error => {
