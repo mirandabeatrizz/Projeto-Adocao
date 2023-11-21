@@ -17,7 +17,7 @@
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a class="item-menu" href="users.html">Usuários</a></li>
+                    <li><a class="item-menu" href="">Usuários</a></li>
                     <li><a class="item-menu" href="">Animais</a></li>
                     <li><a  class="item-menu" href="">Interessados</a></li>
                 </ul>
@@ -45,16 +45,53 @@
         <tbody id="listaAnimais"></tbody>
     </table>
 
+    <div id="formularioEdicao" style="display: none;">
+        <input type="hidden" id="animalId">
+        <div class="conteudoForm">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Nome do Animal">
+        </div>
+        <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" placeholder="Tipo do Animal">
+        </div>
+        <div class="form-group">
+            <label for="porte">Porte:</label>
+        <input type="text" id="porte" placeholder="Porte do Animal">
+    </div>
+    <div class="form-group">
+        <label for="idade">Idade:</label>
+        <input type="text" id="idade" placeholder="Idade do Animal">
+    </div>
+    <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" placeholder="Descrição do Animal">
+    </div>
+    <div class="form-group">
+        <label for="castrado">Castrado</label>
+        <input type="checkbox" id="castrado" value="sim">
+    </div>
+    <div class="form-group">
+        <label for="vacinado">Vacinado</label>
+        <input type="checkbox" id="vacinado" value="sim">
+    </div>
+        <button id="botaoSalvar">Salvar</button>
+    </div>
+    </div>
+
     <div id="popup" style="display: none;">
         <form id="formAddAnimais" class="formulario conteudoForm" method="POST" action="/upload" enctype="multipart/form-data">
             <h2 class="section-title">Novo Animal</h2>
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" class="form-input" placeholder="Digite o nome do animal...">
+                <input type="text" id="nomeAdd" class="form-input" placeholder="Digite o nome do animal...">
             </div>
             <div class="form-group">
                 <label for="tipo">Tipo:</label>
                 <select name="tipo" id="tipo" class="form-input" required>
+                <select name="tipo" id="tipoAdd" class="form-input" required>
                     <option id="gato">Gato</option>
                     <option id="cachorro">Cachorro</option>
                     <option id="outros">Outros</option>
@@ -63,6 +100,7 @@
             <div class="form-group">
                 <label for="porte">Porte:</label>
                 <select type="text" id="porte" class="form-input" required>
+                <select type="text" id="porteAdd" class="form-input" required>
                     <option id="pequeno">Pequeno</option>
                     <option id="medio">Médio</option>
                     <option id="grande">Grande</option>
@@ -71,10 +109,12 @@
             <div class="form-group">
                 <label for="idade">Idade:</label>
                 <input type="number" id="idade" class="form-input" placeholder="Informe a idade do animal...">
+                <input type="number" id="idadeAdd" class="form-input" placeholder="Informe a idade do animal...">
             </div>
             <div class="form-group">
                 <label for="descricao">Descrição:</label>
                 <textarea name="descricao" id="descricao"  cols="30" rows="10" placeholder="Faça uma descrição do animal..."></textarea>
+                <textarea name="descricao" id="descricaoAdd"  cols="30" rows="10" placeholder="Faça uma descrição do animal..."></textarea>
             </div>
             <div class="form-group radio">
                 <label for="castrado">Castrado:</label>
@@ -89,7 +129,7 @@
                         step="0.01">Não
             </div>
             <div class="form-group">
-                <input type="file" multiple="multiple" name="file" id="file1" onchange="limitarQtdArquivos()"/>
+                <input type="file" multiple="multiple" name="file" id="file1"/>
                 <input type="submit" class="input-file-button" id="addImgs" value="Enviar" />
             </div>
             
@@ -133,7 +173,7 @@
             padding: 5% 0 0 4%;
         
         }
-        #popup {
+        #popup, #formularioEdicao{
             position: fixed;
             width: 100%;
             height: 100%;
@@ -141,7 +181,6 @@
             z-index: 20;
             top: 0;
             left: 0;
-            overflow: auto;
             
         }
 
@@ -154,7 +193,6 @@
             margin: auto;
             border-radius: 13px;
             transition: .3s;
-           
         }
         .conteudoForm h2{
             text-align: center;

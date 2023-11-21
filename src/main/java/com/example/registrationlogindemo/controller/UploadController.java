@@ -24,7 +24,8 @@ import org.springframework.http.HttpHeaders;
 import com.example.registrationlogindemo.entity.Animais;
 import com.example.registrationlogindemo.entity.Imagens;
 
-@RestController
+//@RestController
+@Controller
 public class UploadController {
 
     public static List<Imagens> listaImagems = new ArrayList<Imagens>();
@@ -32,7 +33,7 @@ public class UploadController {
     @Value("${upload.path}")
     private String uploadPath;
     @PostMapping("/upload")
-    public void handleFileUpload(@RequestParam("file") List <MultipartFile> files,
+    public String handleFileUpload(@RequestParam("file") List <MultipartFile> files,
             RedirectAttributes redirectAttributes) {
 
         for (MultipartFile file: files){
@@ -54,6 +55,7 @@ public class UploadController {
             e.printStackTrace();
         }
     }
+        return "upload";
       
     }
 

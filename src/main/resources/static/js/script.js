@@ -64,60 +64,11 @@ function listarAnimais(){
     .catch(error => {
         console.error('Erro ao listar animais:', error);
     });
+    // Adiciona um ouvinte de evento ao evento popstate
+
 }
 
-const nomeInput = document.getElementById('nome');
-const tipoInput = document.getElementById('tipo');
-const porteInput = document.getElementById('porte');
-const idadeInput = document.getElementById('idade');
-const descricaoInput = document.getElementById('descricao');
-const castradoInput = document.getElementById('castrado');
-const vacinadoInput = document.getElementById('vacinado');
-const animalIdInput = document.getElementById('animalId');
-
-// Adicione um evento de clique ao botão "Salvar" para enviar a atualização
-
-const botaoSalvar = document.getElementById('botaoSalvar');
-botaoSalvar.addEventListener('click', function() {
-    // Aqui você deve enviar a solicitação de atualização para o servidor
-    const id = animalIdInput.value;
-    const novoNome = nomeInput.value;
-    const novoTipo = tipoInput.value;
-    const novoPorte = porteInput.value;
-    const novaIdade = idadeInput.value;
-    const novaDescricao = descricaoInput.value;
-    const novoCastrado = castradoInput.checked;
-    const novoVacinado = vacinadoInput.checked;
-    
-    fetch(`/animais/editar/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            nome: novoNome,
-            tipo: novoTipo,
-            porte: novoPorte,
-            idade: novaIdade,
-            descricao: novaDescricao,
-            castrado: novoCastrado,
-            vacinado: novoVacinado
-        })
-    })
-    .then(response => {
-        if (response.ok) {
-            alert(`Animal com ID ${id} editado com sucesso.`);
-            formularioEdicao.style.display = 'none'; // Feche o formulário de edição
-            listarAnimais();// Atualize a lista de animais após a edição
-        } else {
-            console.error(`Erro ao editar o animal com ID ${id}`);
-        }
-    })
-    .catch(error => {
-        console.error(`Erro ao editar o animal com ID ${id}:`, error);
-    });
-});
-
+/*
 function limitarQtdArquivos(files){
     var maximoArq = 3;
 
@@ -128,7 +79,7 @@ function limitarQtdArquivos(files){
         document.getElementById('mensagemErro').innerText = '';
     }
 }
-
+*/
 function abrirFormularioEdicao(id) {
     // Aqui, você deve obter as informações do animal com o ID fornecido
     fetch(`/animais/buscar/${id}`)
@@ -232,3 +183,56 @@ fecharBtn.addEventListener('click', ()=>{
 });
 
 listarAnimais();
+console.log(document.getElementById('file1').files.length);
+
+//popup.style.display='flex';
+
+const nomeInput = document.getElementById('nome');
+const tipoInput = document.getElementById('tipo');
+const porteInput = document.getElementById('porte');
+const idadeInput = document.getElementById('idade');
+const descricaoInput = document.getElementById('descricao');
+const castradoInput = document.getElementById('castrado');
+const vacinadoInput = document.getElementById('vacinado');
+const animalIdInput = document.getElementById('animalId');
+
+const botaoSalvar = document.getElementById('botaoSalvar');
+botaoSalvar.addEventListener('click', function() {
+    // Aqui você deve enviar a solicitação de atualização para o servidor
+    const id = animalIdInput.value;
+    const novoNome = nomeInput.value;
+    const novoTipo = tipoInput.value;
+    const novoPorte = porteInput.value;
+    const novaIdade = idadeInput.value;
+    const novaDescricao = descricaoInput.value;
+    const novoCastrado = castradoInput.checked;
+    const novoVacinado = vacinadoInput.checked;
+    
+    fetch(`/animais/editar/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nome: novoNome,
+            tipo: novoTipo,
+            porte: novoPorte,
+            idade: novaIdade,
+            descricao: novaDescricao,
+            castrado: novoCastrado,
+            vacinado: novoVacinado
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert(`Animal com ID ${id} editado com sucesso.`);
+            formularioEdicao.style.display = 'none'; // Feche o formulário de edição
+            listarAnimais();// Atualize a lista de animais após a edição
+        } else {
+            console.error(`Erro ao editar o animal com ID ${id}`);
+        }
+    })
+    .catch(error => {
+        console.error(`Erro ao editar o animal com ID ${id}:`, error);
+    });
+});

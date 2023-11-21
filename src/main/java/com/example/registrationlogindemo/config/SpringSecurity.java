@@ -33,8 +33,9 @@ public class SpringSecurity {
                                  .requestMatchers("/DetalhesAnimal/**").permitAll()
                                 .requestMatchers("/index").permitAll()
                                 .requestMatchers("/").permitAll()
+                                .requestMatchers("/animais/**").permitAll()
                                 .requestMatchers("/users").hasRole("ADMIN")
-                                .requestMatchers("/animais/**").hasRole("ADMIN")
+                                
                                 .requestMatchers("/interesse/**").hasRole("ADMIN")
                                 .requestMatchers("/CadastroAnimais").hasRole("ADMIN")
                                 .requestMatchers("/Interessados").hasRole("ADMIN")

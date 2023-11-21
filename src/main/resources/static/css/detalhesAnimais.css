@@ -31,6 +31,7 @@ body{
 }
 .menu .conteudo-menu ul li a:hover{
     color: #afbb9f;
+    font-weight: 600;
 }
 
 .container{
@@ -82,6 +83,7 @@ body{
             z-index: 20;
             top: 0;
             left: 0;
+            overflow: auto;
 }
 .conteudoForm {
     background-color: #fff;
