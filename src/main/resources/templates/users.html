@@ -6,10 +6,51 @@
     <title>Sistema de Registro e Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar">
+        <div class="conteudomenu">
+            <div class="logo">
+                <img src="" alt="">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a class="item-menu" href="users">Usuários</a></li>
+                    <li><a class="item-menu" href="CadastroAnimais">Animais</a></li>
+                    <li><a  class="item-menu" href="Interessados">Interessados</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="container">
+            <h1> Usuários Registrados </h1>
+                <div class="">    
+                    <button id="btnAbrir" th:href="@{/register}">Adicionar Usuário</button>
+                </div>
+      
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Primeiro Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user: ${users}">
+                    <td th:text="${user.firstName}"></td>
+                    <td th:text="${user.lastName}"></td>
+                    <td th:text="${user.email}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Sistema de Registro e Login</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -32,28 +73,6 @@
                 </ul>
             </div>
         </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <h1> Usuários Registrados </h1>
-        </div>
-        <table class="table table-striped table-bordered table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th>Primeiro Nome</th>
-                    <th>Sobrenome</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="user: ${users}">
-                    <td th:text="${user.firstName}"></td>
-                    <td th:text="${user.lastName}"></td>
-                    <td th:text="${user.email}"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
+    </nav>-->
 
 </html>

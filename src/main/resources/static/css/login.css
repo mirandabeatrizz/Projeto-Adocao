@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Oswald Bold';
+    src: url(fonts/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: 'Oswald Extra Light';
+    src: url(fonts/Oswald-ExtraLight.ttf);
+}
+@font-face {
+    font-family: 'Oswald Light';
+    src: url(fonts/Oswald-Light.ttf);
+}
+@font-face {
+    font-family: 'Oswald Medium';
+    src: url(fonts/Oswald-Medium.ttf);
+}
+@font-face {
+    font-family: 'Oswald Regular';
+    src: url(fonts/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: 'Oswald Semi Bold';
+    src: url(fonts/Oswald-SemiBold.ttf);
+}
+
+body{
+    background-image: linear-gradient(to left top, #4e695c, #677f6f, #819682, #9dad97, #b9c4ac);
+    width: 100vw;
+    height: 100vh;
+}
+
+.card-login{
+    width: 35%;
+    padding: 20px;
+    border: solid 2px #475237;
+    border-radius: 8px;
+    margin:auto ;
+    background-color: #fff;
+    margin-top: 12%;
+}
+.card-login .texto h3{
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.card-login .texto h3, p{
+    text-align: center;
+    font-family: 'Oswald Medium';
+}
+
+.card-login .dados .inputs{
+    margin-top: 20px;
+    
+}
+.card-login .dados .inputs input{
+    border: solid 1px #475237;
+   
+}
+.card-login .dados .inputs button{
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #475237;
+    color: #fff;
+}
+.card-login .dados .inputs button:hover{
+    background-color: #586348;
+}

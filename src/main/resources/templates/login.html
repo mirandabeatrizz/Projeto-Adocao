@@ -6,40 +6,31 @@
     <title>Sistema de Gerenciamento de Animais </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" th:fragment="header">
-    <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/}">Sistema de Gerenciamento de Animais</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
-<br />
-<br />
-<br />
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
+<div class="">
+    <div class="container-card">
+        <div class="">
             <div th:if="${param.error}">
                 <div class="alert alert-danger">Email e senha inválidos.</div>
             </div>
             <div th:if="${param.logout}">
                 <div class="alert alert-success">Você foi desconectado.</div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="text-center">Fazer Login</h3>
+            <div class="card-login">
+                <div class="texto">
+                    <h3 class="titulo">Seja Bem Vindo(a)!</h3>
+                    <p>Faça seu login</p>
                 </div>
-                <div class="card-body">
+                <div class="dados">
                     <form
                             method="post"
                             th:action="@{/login}"
                             class="form-horizontal"
                             role="form"
                     >
-                        <div class="mb-3">
+                        <div class="inputs">
                             <label for="username" class="control-label">Email *</label>
                             <input type="text"
                                    id="username"
@@ -49,7 +40,7 @@
                             />
                         </div>
 
-                        <div class="mb-3">
+                        <div class="inputs">
                             <label for="password" class="control-label">Senha *</label>
                             <input type="password"
                                    id="password"
@@ -59,8 +50,8 @@
                             />
                         </div>
 
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        <div class="inputs">
+                            <button type="submit" class="">Entrar</button>
                             <!--<span> Ainda não está registrado?
                             <a th:href="@{/register}"> Cadastre-se Aqui</a>
                         </span>-->
