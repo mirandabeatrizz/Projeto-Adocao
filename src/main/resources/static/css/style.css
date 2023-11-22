@@ -19,13 +19,18 @@
 }
 .navbar ul li{
    list-style: none;
-   margin: 0 20px;
-   text-transform: uppercase;
+   margin: 0 30px;
+   
+   font-family: 'Plus Jakarta Sans Regular';
 }
 .navbar ul li a{
    color: #fff;
    text-decoration: none;
    font-size: 22px;
+}
+.navbar ul li a:hover{
+   font-weight: 600;
+
 }
 .container{
    display: flex;
@@ -106,6 +111,9 @@ input, select, optgroup, textarea{
    width: 15%;
    justify-content: center;
 }
+.addAni button:hover{
+   border: #4E695C solid 2px;
+}
 
 .container h1{
    text-transform: uppercase;
@@ -120,11 +128,12 @@ input, select, optgroup, textarea{
 
 }
 .container table thead tr th{
-   font-size: 13px;
+   font-size: 15px;
     padding: 20px;
     text-align: center;
-    color: #fff;
     text-transform: uppercase;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans Regular';
 }
 
 

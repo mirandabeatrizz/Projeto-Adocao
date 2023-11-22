@@ -1,27 +1,4 @@
-@font-face {
-    font-family: 'Oswald Bold';
-    src: url(fonts/Oswald-Bold.ttf);
-}
-@font-face {
-    font-family: 'Oswald Extra Light';
-    src: url(fonts/Oswald-ExtraLight.ttf);
-}
-@font-face {
-    font-family: 'Oswald Light';
-    src: url(fonts/Oswald-Light.ttf);
-}
-@font-face {
-    font-family: 'Oswald Medium';
-    src: url(fonts/Oswald-Medium.ttf);
-}
-@font-face {
-    font-family: 'Oswald Regular';
-    src: url(fonts/Oswald-Regular.ttf);
-}
-@font-face {
-    font-family: 'Oswald Semi Bold';
-    src: url(fonts/Oswald-SemiBold.ttf);
-}
+
 
 body{
     background-image: linear-gradient(to left top, #4e695c, #677f6f, #819682, #9dad97, #b9c4ac);
