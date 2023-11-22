@@ -122,20 +122,51 @@ input, select, optgroup, textarea{
    color: #4E695C;
 }
 .container table{
-   margin-top: 33px;
-   border-radius: 10px;
-   background-color: #67927d;
+   margin: 33px 0;
 
 }
-.container table thead tr th{
+.container table thead tr{
    font-size: 15px;
     padding: 20px;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
     font-family: 'Plus Jakarta Sans Regular';
+    background-color: #67927d;
 }
+tbody{
+   text-align: center;
+   border: 1px solid #f2f2f2;
+}
+td{
+   border-right: solid 2px #e1d8d8;
+   border-left: solid 2px #e1d8d8;
+}
+.flat-button{
+   border: none;
+   padding: 10px;
+   border-radius: 10px;
+   margin: 10px 0;
+}
+.botao-excluir{
+   background-color: #ff9e9e
+}
+.botao-editar{
+   background-color: #8ed6ff;
 
+}
+.btn-add-user{
+   display: flex;
+   justify-content: flex-end;
+}
+.btn-add-user a{
+   text-decoration: none;
+   color: #000;
+   padding: 20px;
+   background-color: #f2f2f2;
+   border-radius: 10px;
+  
+}
 
 @media(min-width: 1200px){
    .container{

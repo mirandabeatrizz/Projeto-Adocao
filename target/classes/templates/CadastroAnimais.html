@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/fonts.css">
     <title>Cadastro de Animais</title>
 </head>
 
 <body>
+    <!------------------------------MENU------------------------------->
     <div class="navbar">
         <div class="conteudomenu">
             <div class="logo">
@@ -19,16 +22,16 @@
                 <ul>
                     <li><a class="item-menu" href="users">Usuários</a></li>
                     <li><a class="item-menu" href="CadastroAnimais">Animais</a></li>
-                    <li><a  class="item-menu" href="Interessados">Interessados</a></li>
+                    <li><a  class="item-menu" href="ListaInteressados">Interessados</a></li>
                 </ul>
             </nav>
         </div>
     </div>
+ <!------------------------------LISTA ANIMAIS------------------------------->
     <section class="container">
-    <h1 class="page-title">Cadastro de Animais</h1>
+    <h1 class="page-title">Lista de Animais</h1>
     <div class="addAni">    <button id="btnAbrir">Adicionar Animal</button></div>
-    
-    <h2 class="section-title">Lista de Animais</h2>
+    <h2 class="section-title" style="display: none;">Lista de Animais</h2>
     <table class="tabela">
         <thead>
             <tr>
@@ -44,8 +47,9 @@
         </thead>
         <tbody id="listaAnimais"></tbody>
     </table>
-
+<!-------------------------EDIÇÃO ANIMAIS------------------------------->
     <div id="formularioEdicao" style="display: none;">
+        <H2>Editar Animal</H2>
         <input type="hidden" id="animalId">
         <div class="conteudoForm">
         <div class="form-group">
@@ -79,7 +83,7 @@
         <button id="botaoSalvar">Salvar</button>
     </div>
     </div>
-
+<!---------------------ADICIONAR ANIMAIS--------------------------->
     <div id="popup" style="display: none;">
         <form id="formAddAnimais" class="formulario conteudoForm" method="POST" action="/upload" enctype="multipart/form-data">
             <h2 class="section-title">Novo Animal</h2>
@@ -131,126 +135,9 @@
             <div class="form-group">
                 <button type="button" id="addAnimais" class="flat-button">Adicionar Animal</button>
             </div>
-        </form>
-    
-        
+        </form> 
     </div>
     <script src="/js/script.js"></script>
-    <style>
-        .navbar{
-            position: fixed;
-            height: 100%;
-            justify-content: center;
-            background-color: #6b6a6a;
-            padding: 20px;
-            width: 13%;
-            align-items: flex-start;
-        }
-        .navbar ul{
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .navbar ul li{
-            list-style: none;
-            margin: 20px 0;
-        }
-        .navbar ul li a{
-            color: #fff;
-            text-decoration: none;
-            font-size: 29px;
-        }
-        .container{
-            display: flex;
-            flex-direction: column;
-            padding: 5% 0 0 4%;
-        
-        }
-        #popup{
-            overflow: auto;
-        }
-        #popup, #formularioEdicao{
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.473);
-            z-index: 20;
-            top: 0;
-            left: 0;
-            
-        }
-
-        .conteudoForm {
-            background-color: #fff;
-            width: 32%;
-            padding: 29px 53px;
-            display: flex;
-            flex-direction: column;
-            margin: auto;
-            border-radius: 13px;
-            transition: .3s;
-        }
-        .conteudoForm h2{
-            text-align: center;
-        }
-
-        .radio input {
-            margin: 0px 10px;
-        }
-        .form-group{
-            display: flex;
-            flex-direction: column;
-            padding: 5px 0px;
-        }
-        select{
-            color: #6b6a6a;
-        }
-        input, select, optgroup, textarea{
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: rgba(177, 177, 177, 0.507);
-        }
-        .radio{
-            flex-direction: row;
-        }
-        .conteudoForm button{
-            border: none;
-            margin: 10px 0px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .conteudoForm button:hover{
-           background-color: rgb(104, 155, 89);
-           color: #fff;
-           box-shadow: 5px 5px #000;
-                
-        }
-        .addAni{
-            display: flex;
-            width: 100%;
-            justify-content: flex-end;
-        }
-        .addAni button{
-        border: none;
-        margin-right: 3%;
-        padding: 10px;
-        border-radius: 5px;
-        display: flex;
-        width: 15%;
-        justify-content: center;
-        }
-
-        @media(min-width: 1200px){
-            .container{
-                max-width: 87%;
-                float: right;
-            }
-        }
-        
-    </style>
 </section>
 </body>
 

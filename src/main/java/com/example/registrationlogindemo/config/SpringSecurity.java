@@ -38,7 +38,7 @@ public class SpringSecurity {
                                 
                                 .requestMatchers("/interesse/**").hasRole("ADMIN")
                                 .requestMatchers("/CadastroAnimais").hasRole("ADMIN")
-                                .requestMatchers("/Interessados").hasRole("ADMIN")
+                                .requestMatchers("/ListaInteressados").hasRole("ADMIN")
                                 .requestMatchers("/register").hasRole("ADMIN")
                                  .requestMatchers("/upload").hasRole("ADMIN")
                 ).formLogin(

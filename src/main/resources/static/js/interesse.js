@@ -43,6 +43,7 @@
         console.error('Erro ao adicionar interesse:', error);
     });
 });*/
+
 function mostrarAnimais(){
     fetch('/animais/listar')
     .then(response => response.json())
@@ -78,7 +79,6 @@ function mostrarAnimais(){
         console.error('Erro ao listar animais:', error);
     });
 }
-
 mostrarAnimais();
 
 const abrirInteresse = document.getElementById('abrirFormInteresse');
