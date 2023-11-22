@@ -67,7 +67,7 @@ function mostrarAnimais(){
                     <p>Castrado: ${animal.castrado}</p>
                     <p>Descrição: ${animal.descricao}</p>
                     <div class="btn-adotar">
-                        <button id="abrirFormInteresse">${animal.id}Adotar</button>
+                        <button id="abrirFormInteresse" data-id="${animal.id}">Mais Detalhes</button>
                     </div>
                 </div>
         </div>
