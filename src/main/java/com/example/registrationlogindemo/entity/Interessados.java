@@ -46,7 +46,7 @@ public class Interessados {
     private String mensagem;
 
     @Column()
-    private Date dataNasc;
+    private int idade;
     
     @ManyToOne
     @JoinColumn(name="animais_id")

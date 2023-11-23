@@ -55,7 +55,7 @@ public class InteressadosController {
     if (animalOptional.isPresent()) {
         Animais animal = animalOptional.get();
         model.addAttribute("animal", animal);
-        return "DetalhesAnimal"; // Nome do template Thymeleaf
+        return "todosAnimais"; // Nome do template Thymeleaf
     } else {
         // Trate o caso em que o animal não é encontrado (por exemplo, redirecione ou retorne uma mensagem de erro)
         return "animal_nao_encontrado"; // Crie um novo template para esse caso, se necessário
