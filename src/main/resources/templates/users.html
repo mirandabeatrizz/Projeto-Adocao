@@ -41,8 +41,8 @@
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr th:each="user: ${users}">
+            <tbody id="listaUsers">
+                <!--<tr th:each="user: ${users}">
                     <td th:text="${user.firstName}"></td>
                     <td th:text="${user.lastName}"></td>
                     <td th:text="${user.email}"></td>
@@ -50,7 +50,7 @@
                         <button class="botao-excluir flat-button" data-id="${user.id}">Excluir</button>
                        <button class="botao-editar flat-button" id = "editar" data-id="${user.id}">Editar</button>
                     </td>
-                </tr>
+                </tr>-->
             </tbody>
         </table>
     </div>
