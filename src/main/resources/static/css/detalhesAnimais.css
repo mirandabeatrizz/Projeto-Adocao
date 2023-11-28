@@ -90,6 +90,7 @@ body{
     padding: 10px;
     border-radius: 10px;
     width: 100%;
+    margin: 5px 0;
 }
 #detalhesAnimais .container .card .infos .btn-adotar button:hover{
     background-color: #63724F;

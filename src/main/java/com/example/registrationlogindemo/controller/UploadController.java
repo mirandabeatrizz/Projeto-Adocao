@@ -47,7 +47,7 @@ public class UploadController {
             Path path = Paths.get(uploadPath + file.getOriginalFilename());
             Files.write(path, bytes);
             Imagens imagem = new Imagens();
-            imagem.setCaminho(uploadPath + file.getOriginalFilename());
+            imagem.setCaminho("/img/animais/" + file.getOriginalFilename());
             listaImagems.add(imagem);
             redirectAttributes.addFlashAttribute("message",
                     "Upload realizado com sucesso: " + file.getOriginalFilename());

@@ -3,6 +3,7 @@ package com.example.registrationlogindemo.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -29,13 +30,15 @@ public class SpringSecurity {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { //filtros
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((authorize) ->
-                        authorize.requestMatchers("/css/**","/img/**", "/js/**").permitAll() // precisa ficar em primeiro
+                        authorize.requestMatchers("/css/**","/img/**", "/js/**", "C:/**").permitAll() // precisa ficar em primeiro
                                  .requestMatchers("/todosAnimais/**").permitAll()
                                 .requestMatchers("/index").permitAll()
+                                 .requestMatchers("/infoAnimal.html/**").permitAll()
+                                 .requestMatchers("/teste").permitAll()
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/animais/**").permitAll()
+
                                 .requestMatchers("/users").hasRole("ADMIN")
-                                
                                 .requestMatchers("/interesse/**").hasRole("ADMIN")
                                 .requestMatchers("/cadastroAnimais").hasRole("ADMIN")
                                 .requestMatchers("/listaInteressados").hasRole("ADMIN")

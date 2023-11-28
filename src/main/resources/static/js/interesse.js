@@ -66,6 +66,7 @@ function mostrarAnimais(){
                 </div>
            
                 <div class="infos">
+                    <input type="hidden" id="animalId">
                     <h3>Nome do Animal: ${animal.nome} </h3>
                     <p>Tipo do animal: ${animal.tipo}</p>
                     <p>Idade do animal: ${animal.idade}</p>
@@ -73,11 +74,13 @@ function mostrarAnimais(){
                     <p>Castrado: ${animal.castrado}</p>
                     <p>Descrição: ${animal.descricao}</p>
                     <div class="btn-adotar">
-                        <button id="abrirFormInteresse" data-id="${animal.id}">Mais Detalhes</button>
+                        <button class="botao-editar" data-id="${animal.id}"> Mais Detalhes</button>
+                        <button onclick="navigateToAnimalDetails(${animal.id})">Mais informações</button>
                     </div>
                 </div>
         </div>
         </section>`;
+        
         detalhesAnimais.appendChild(div);
         });
     })
@@ -86,10 +89,3 @@ function mostrarAnimais(){
     });
 }
 mostrarAnimais();
-
-const abrirInteresse = document.getElementById('abrirFormInteresse');
-const formPopup = document.getElementById('formpopup');
-
-abrirInteresse.addEventListener('click', ()=>{
-    formPopup.style.display='flex';
-});

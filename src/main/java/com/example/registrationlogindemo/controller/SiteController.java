@@ -19,6 +19,14 @@ public class SiteController {
     public String todosAnimais(){
         return"todosAnimais";
     }
+     @GetMapping("/infoAnimal")
+    public String infoAnimal(){
+        return"infoAnimal";
+    }
+       @GetMapping("/teste")
+    public String teste(){
+        return"teste";
+    }
     
   
     

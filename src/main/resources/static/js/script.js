@@ -124,6 +124,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     const castradoInput = document.querySelector('input[name="castrado"]:checked');
     const vacinadoInput = document.querySelector('input[name="vacinado"]:checked');
     const descricaoInput = document.getElementById('descricaoAdd');
+    const imagemInput = document.getElementById('file1');
     
     const nome = nomeInput.value;
     const tipo = tipoInput.value;
@@ -159,7 +160,11 @@ document.getElementById('addAnimais').addEventListener('click', function(){
         castradoInput.value = '';
         vacinadoInput.value = '';
         descricaoInput.value = '';
+        imagemInput.value = '';
+        
         listarAnimais();
+
+        localStorage.setItem('visited', 'false');
     })
     .catch(error => {
         console.error('Erro ao adicionar animal:', error);
@@ -174,6 +179,7 @@ const fecharBtn = document.getElementById('addAnimais');
 
 abrirBtn.addEventListener('click', ()=>{
     popup.style.display='flex';
+    localStorage.setItem('visited', 'true');
 });
 
 fecharBtn.addEventListener('click', ()=>{

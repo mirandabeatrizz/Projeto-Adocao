@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #b2cc91;
+}
+.afasrta{
+    margin-top: 50px;
+}
+
+*{
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: #123;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+}
+nav.logo{
+    color: #ffffff;
+    font-weight: 600;
+}
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+nav ul li{
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+    background-color: rgb(41, 90, 22);
+}
+nav .menu-btn i{
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+}
+@media  (max-width:900px){
+    nav .menu-btn i{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        top:80px;
+        left: -100%;
+        background-color: #123;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    nav ul.open{
+        left: 0;
+    }
+    nav ul li{
+        width: 100%;
+        margin: 50px 0 
+    }
+    nav ul li a{
+        font-size: 23px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+    background: none;
+    color: #b2cc91;
+    }
+    
+}
+
+
+/*_______*/
+.BarraInicio{
+    width: 100%;
+    height: 70px;
+    background-color: #63724F;
+    color: rgb(255, 255, 255);
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 999999999999;  
+} 
+.PARTEDALOGO{
+width: 15%;
+height: 100%;
+background-color: #63724F;
+align-items: center;
+justify-content: center;
+display: flex;
+margin-left: 15px;
+}
+.BotaoHome{
+margin-left: 50%;
+width: 10%;
+height: 100%;
+background-color: #63724F;
+align-items: center;
+justify-content: center;
+display: flex;
+cursor: pointer;
+}
+
+.BotaoSobre{
+margin-left: 0%;
+width: 10%;
+height: 100%;
+background-color: #63724F;
+align-items: center;
+justify-content: center;
+display: flex;
+cursor: pointer;
+}
+
+.BotaoAnimais{
+width: 10%;
+height: 100%;
+background-color: #63724F;
+align-items: center;
+justify-content: center;
+display: flex;
+color: #fff;
+cursor: pointer;
+text-decoration: none;
+}
+.BotaoAnimais:hover, .BotaoSobre:hover, .BotaoContato:hover, .BotaoHome:hover{
+background-color: #96ad79;
+color: #000;
+transition: 1.0s;
+transform: scale(1.1); 
+} 
+.BotaoContato{
+width: 10%;
+height: 100%;
+background-color: #63724F;
+align-items: center;
+justify-content: center;
+display: flex; 
+cursor: pointer;
+}
+/*___________*/
+
+.PrincipalImagens{
+    width: 100%;
+    height: 340px;
+    background-color: #63724F;
+    display: flex;
+    margin-top: 70px;
+}
+.Img1{
+    width: 33.3%;
+    height: 300px;
+    justify-content: center;
+    display: flex;
+}
+.Img2{
+    width: 33.4%;
+    height: 300px;
+    justify-content: center;
+    display: flex;
+}
+.Img3{
+    width: 33.4%;
+    height: 300px;
+    justify-content: center;
+    display: flex;
+}
+.Imagem1animal, .Imagem2animal, .Imagem3animal {
+    width: 83%;
+    height: 260px;
+    border-radius: 10px;
+}
+/*______*/
+
+.partetotaldapa{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    
+}
+/*________*/
+.patrafdasdasdasd{
+    width: 70%;
+    height: 340px;
+    display: flex; 
+}
+.ParteFormulario{
+    width: 30%;
+    height: 300px;
+    background-color: #9bb37c;
+    display: flex;
+    border-radius: 10px;
+    margin-top: -40px;
+    margin-right: 20px;
+}
+/*________*/
+.ParteNomeAnimalGrande{
+    width: 100%;
+    display: flex;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.a100{
+    font-size: 32px;
+    font-family: "PT sans";
+    margin-left: 50px;  
+    margin-top: 15px;
+}
+.asaqw{
+    width: 100%;
+    height: 50px;
+    margin-left: 40px;
+    margin-top: -40px;
+    margin-right: 40px;
+}
+/*________*/
+.parttedebaixoparadarcem{
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+/*_____*/
+
+.ParteNomes{
+    width: 30%;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+}
+.ParteNomes2{
+    width: 25%;
+    height: 300px;
+    background-color: #ffffff;
+ 
+}
+.ParteDescricao{
+    width: 50%;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    margin-left: -40px;
+}
+/*_______*/
+.escritaOpacity{
+    color: #62626e;
+    font-size: 16px;
+    margin-left: 50px;
+}
+.escritaOpacity2{
+
+    color: #62626e;
+    font-size: 16px;
+}
+.escritaOpacity3{
+    color: #62626e;
+    font-size: 16px;
+    margin-left: 30px;
+
+}
+.a8{
+    font-size: 23px;
+    margin-left: 50px;
+}
+.a28{
+    font-size: 23px;
+}
+.partetextodes{
+    font-size: 22px;
+    font-family: "PT sans";
+    margin-left: 30px;
+
+}
+
+.ParteButtonParaFomes{
+    width: 100%;
+    height: 65px;
+    background-color: #63724F;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-left: 55px;
+    border-color: 10px;
+    border:3px;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    
+.BarraInicial{
+    width: 100%;
+    height: 50px;
+    background-color: #63724F;
+}
+.LogoAnimais{
+    width: 150px;
+    height: 40px;
+    color: WHITE;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 15PX;
+    font-family: "PT sans";
+}
+
+.PrincipalImagens {
+    flex-direction: column;
+    height: auto; 
+}
+
+.Img1, .Img2, .Img3 {
+    width: 100%; 
+}
+
+.partetotaldapa{
+    flex-direction: column;
+    height: auto; 
+    
+}
+.patrafdasdasdasd{
+    width: 100%;
+    height: 340px;
+    display: flex; 
+}
+.ParteFormulario{
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+   
+    
+
+}
+/*________*/
+.ParteNomeAnimalGrande{
+    width: 100%;
+    display: flex;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.a100{
+    font-size: 32px;
+    font-family: "PT sans";
+    margin-left: 50px;  
+    margin-top: 5px;
+}
+.asaqw{
+    width: 100%;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: -10px;
+    margin-right: 15px;
+}
+/*________*/
+.parttedebaixoparadarcem{
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+/*_____*/
+
+.ParteNomes{
+    width: 50%;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+}
+.ParteNomes2{
+    width: 50%;
+    height: 300px;
+    background-color: #ffffff;  
+ 
+}
+.ParteDescricao{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    margin-left: -40px;
+}
+/*_______*/
+.escritaOpacity{
+    color: #62626e;
+    font-size: 14px;
+    margin-left: 15px;
+}
+.escritaOpacity2{
+    font-size: 14px;
+}
+.escritaOpacity3{
+    font-size: 16px;
+    margin-left: 20px;
+
+}
+.a8{
+    font-size: 21px;
+    margin-left: 15px;
+}
+.a28{
+    font-size: 21px;
+}
+.partetextodes{
+    font-size: 19px;
+    font-family: "PT sans";
+    margin-left: 20px;
+}
+
+.ParteButtonParaFomes{
+    width: 100%;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+   
+
+}
