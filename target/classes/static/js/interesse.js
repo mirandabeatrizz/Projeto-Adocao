@@ -50,6 +50,7 @@ document.getElementById('addInteresse').addEventListener('click', function(){
 
 
 // ----------------- MOSTRA - CRIA O CARD DOS ANIMAIS ---------------//
+
 function mostrarAnimais(){
     fetch('/animais/listar')
     .then(response => response.json())
@@ -74,11 +75,10 @@ function mostrarAnimais(){
                     <p>Castrado: ${animal.castrado}</p>
                     <p>Descrição: ${animal.descricao}</p>
                     <div class="btn-adotar">
-                        <button class="botao-editar" data-id="${animal.id}"> Mais Detalhes</button>
-                        <button onclick="navigateToAnimalDetails(${animal.id})">Mais informações</button>
-                        <script>
-                         
-                            </script>
+                    <a href="/infoAnimal">
+                        <button class="botao-editar" id="animal" data-id="${animal.id}"> Mais Detalhes</button> 
+                    </a>
+                       
                     </div>
                 </div>
         </div>
@@ -92,14 +92,15 @@ function mostrarAnimais(){
         console.error('Erro ao listar animais:', error);
     });
 }
-const animalId = document.getElementById('animalId');
 
-function navigateToAnimalDetails(animalId) {
+const animalId = document.getElementById('animal');
+
+function mostrarAnimal() {
                                 
     localStorage.setItem('animalId', animal.id);
 
     // Redirecionar para a próxima página
-    window.location.href = 'infoAnimais.html';
+    window.location.href = '/infoAnimais.html';
 }
 
 mostrarAnimais();

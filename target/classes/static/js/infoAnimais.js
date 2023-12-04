@@ -1,5 +1,5 @@
 function mostrarAnimais(){
-    const animalId = document.getElementById("abrirFormInteresse");
+   const animalId = document.getElementById("abrirFormInteresse");
    console.log(animalId);
 
     fetch(`/animais/buscar/${id}`)
@@ -10,7 +10,7 @@ function mostrarAnimais(){
         
         data.forEach(animal => {
             const div = document.createElement('div');
-            div.innerHTML = `<div class="PrincipalImagens">
+            div.innerHTML = `<div class="PrincipalImagens" data-id="${animal.id}>
             <div class="Img1">
                 <img class="Imagem1animal" src="${animal.file1}" alt="">
             </div>
@@ -19,12 +19,11 @@ function mostrarAnimais(){
                 <img class="Imagem2animal" src="" alt="">
             </div>
     
-    
             <div class="Img3">
                 <img class="Imagem3animal" src="" alt="">
             </div>
     
-        </div>
+           </div>
     
             <div class="ParteFormulario">
                 <a href=""><button class="ParteButtonParaFomes">Acesse o Formulário</button></a>

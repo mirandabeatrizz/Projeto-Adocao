@@ -222,6 +222,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
     });
 
 });
+
 /* -------------------------------------------------------------------------------- */
 
 const abrirBtn = document.getElementById('btnAbrir');

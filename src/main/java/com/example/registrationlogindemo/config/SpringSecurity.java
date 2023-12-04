@@ -33,7 +33,7 @@ public class SpringSecurity {
                         authorize.requestMatchers("/css/**","/img/**", "/js/**", "C:/**").permitAll() // precisa ficar em primeiro
                                  .requestMatchers("/todosAnimais/**").permitAll()
                                 .requestMatchers("/index").permitAll()
-                                 .requestMatchers("/infoAnimal.html/**").permitAll()
+                                 .requestMatchers("/infoAnimal/**").permitAll()
                                  .requestMatchers("/teste").permitAll()
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/animais/**").permitAll()
