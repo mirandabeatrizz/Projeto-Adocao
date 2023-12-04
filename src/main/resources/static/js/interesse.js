@@ -76,16 +76,30 @@ function mostrarAnimais(){
                     <div class="btn-adotar">
                         <button class="botao-editar" data-id="${animal.id}"> Mais Detalhes</button>
                         <button onclick="navigateToAnimalDetails(${animal.id})">Mais informações</button>
+                        <script>
+                         
+                            </script>
                     </div>
                 </div>
         </div>
         </section>`;
         
         detalhesAnimais.appendChild(div);
+      
         });
     })
     .catch(error => {
         console.error('Erro ao listar animais:', error);
     });
 }
+const animalId = document.getElementById('animalId');
+
+function navigateToAnimalDetails(animalId) {
+                                
+    localStorage.setItem('animalId', animal.id);
+
+    // Redirecionar para a próxima página
+    window.location.href = 'infoAnimais.html';
+}
+
 mostrarAnimais();

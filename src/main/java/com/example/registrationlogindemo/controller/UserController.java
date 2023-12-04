@@ -28,13 +28,13 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    /**
-     * @return
+    
+    /*@return
      
     @GetMapping("/listar")
     public List <User> listarUsuarios(){
         return UserRepository.findAll();
-    }*/
+    }*/////////////
     
     @PutMapping("/editar/{id}")
     public User editaUser(@PathVariable Long id, @RequestBody User novoUser){

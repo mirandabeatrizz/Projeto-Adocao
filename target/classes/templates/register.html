@@ -6,52 +6,56 @@
     <title>Sistema de Registro e Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/fonts.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="">
-            <div class="card">
+    <div class="container-card">
+        <!------------------------MENSAGENNS------------------------------->
+        <div class="card-login">
+            <div class="">
                 <div th:if="${param.success}">
                     <div class="alert alert-info">Cadastro concluído!</div>
                 </div>
-                <div class="card-header">
-                    <h2 class="text-center">Fazer Cadastro</h2>
+        <!------------------------------CARD LOGIN------------------------------->
+                <div class="texto">
+                    <h3 class="titulo">Fazer Cadastro</h3>
                 </div>
-                <div class="card-body">
+                <div class="dados">
                     <form method="post" role="form" th:action="@{/register/save}" th:object="${user}">
 
-                        <div class="form-group mb-3">
-                            <label class="form-label">Primeiro nome</label>
+                        <div class="inputs form-group mb-3">
+                            <label class="">Primeiro nome</label>
                             <input class="form-control" id="firstName" name="firstName"
                                 placeholder="Digite o primeiro nome" th:field="*{firstName}" type="text" />
                             <p th:errors="*{firstName}" class="text-danger" th:if="${#fields.hasErrors('firstName')}">
                             </p>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label class="form-label">Sobrenome</label>
+                        <div class=" inputs form-group mb-3">
+                            <label class="">Sobrenome</label>
                             <input class="form-control" id="lastName" name="lastName" placeholder="Digite o sobrenome"
                                 th:field="*{lastName}" type="text" />
                             <p th:errors="*{lastName}" class="text-danger" th:if="${#fields.hasErrors('lastName')}">
                             </p>
                         </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label">Email</label>
+                        <div class="inputs form-group mb-3">
+                            <label class="">Email</label>
                             <input class="form-control" id="email" name="email" placeholder="Digite o email"
                                 th:field="*{email}" type="email" />
                             <p th:errors="*{email}" class="text-danger" th:if="${#fields.hasErrors('email')}">
                             </p>
                         </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label">Senha</label>
+                        <div class="inputs form-group mb-3">
+                            <label class="">Senha</label>
                             <input class="form-control" id="password" name="password" placeholder="Digite a senha"
                                 th:field="*{password}" type="password" />
                             <p th:errors="*{password}" class="text-danger" th:if="${#fields.hasErrors('password')}">
                             </p>
                         </div>
 
-                        <div class="form-group mb-3">
+                        <div class="inputs form-group mb-3">
                             <button class="btn btn-primary" type="submit">Cadastro</button>
                             <span>Já é cadastrado? <a href="/" th:href="@{/login}">Login
                                     aqui</a></span>

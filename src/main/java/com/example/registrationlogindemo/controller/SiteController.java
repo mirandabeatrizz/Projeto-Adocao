@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SiteController {
 
-  
     @GetMapping("/listaInteressados")
     public String adicionarinteresse(){
         return "listaInteressados";
@@ -28,10 +27,6 @@ public class SiteController {
         return"teste";
     }
     
-  
-    
-  
-
 
     
 }

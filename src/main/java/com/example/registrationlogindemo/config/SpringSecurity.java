@@ -43,12 +43,13 @@ public class SpringSecurity {
                                 .requestMatchers("/cadastroAnimais").hasRole("ADMIN")
                                 .requestMatchers("/listaInteressados").hasRole("ADMIN")
                                 .requestMatchers("/register").hasRole("ADMIN")
+                                .requestMatchers("/register/save").hasRole("ADMIN")
                                  .requestMatchers("/upload").hasRole("ADMIN")
                 ).formLogin(
                 form -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/cadastroAnimais")
+                        .defaultSuccessUrl("/users")
                         .permitAll()
         ).logout(
                 logout -> logout

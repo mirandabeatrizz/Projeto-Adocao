@@ -42,7 +42,7 @@
                 </tr>
             </thead>
             <tbody id="listaUsers">
-                <!--<tr th:each="user: ${users}">
+                <tr th:each="user: ${users}">
                     <td th:text="${user.firstName}"></td>
                     <td th:text="${user.lastName}"></td>
                     <td th:text="${user.email}"></td>
@@ -50,9 +50,45 @@
                         <button class="botao-excluir flat-button" data-id="${user.id}">Excluir</button>
                        <button class="botao-editar flat-button" id = "editar" data-id="${user.id}">Editar</button>
                     </td>
-                </tr>-->
+                </tr>
             </tbody>
         </table>
+        <!-- Formulário de Edição -->
+<div id="editForm" style="display:none;">
+    <h2>Editar Usuário</h2>
+   
+</div>
+
+<!-- Adicione a biblioteca jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Script jQuery para manipulação do formulário de edição -->
+<script>
+    $(document).ready(function () {
+        $(".botao-editar").click(function () {
+            // Obtenha os dados do usuário selecionado
+            var userId = $(this).data("id");
+            var firstName = $("tr[data-id='" + userId + "'] td:nth-child(1)").text();
+            var lastName = $("tr[data-id='" + userId + "'] td:nth-child(2)").text();
+            var email = $("tr[data-id='" + userId + "'] td:nth-child(3)").text();
+
+            // Preencha o formulário de edição com os dados do usuário
+            $("#editFirstName").val(firstName);
+            $("#editLastName").val(lastName);
+            $("#editEmail").val(email);
+
+            // Exiba o formulário de edição
+            $("#editForm").show();
+        });
+
+        $("#saveButton").click(function () {
+            // Lógica para salvar as alterações do usuário (pode enviar uma requisição AJAX para o servidor)
+
+            // Oculte o formulário de edição após salvar
+            $("#editForm").hide();
+        });
+    });
+</script>
     </div>
 </body>
 </html>
