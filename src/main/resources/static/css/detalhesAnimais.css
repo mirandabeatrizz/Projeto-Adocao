@@ -85,7 +85,7 @@ body{
     width: 100%;
     padding: 20px 0;
 }
-#detalhesAnimais .container .card .infos .btn-adotar button{
+#detalhesAnimais .container .card .infos .btn-adotar a button{
     border: none;
     padding: 10px;
     border-radius: 10px;

@@ -87,6 +87,16 @@ function mostrarAnimais(){
         detalhesAnimais.appendChild(div);
       
         });
+        // Adicionar eventos para os botões editar e excluir
+        const botoesEditar = document.querySelectorAll('.botao-editar');
+
+        botoesEditar.forEach(botao => {
+            botao.addEventListener('click', function () {
+                const id = botao.getAttribute('data-id');
+                localStorage.setItem('idAnimal', id);
+            });
+        });
+
     })
     .catch(error => {
         console.error('Erro ao listar animais:', error);
