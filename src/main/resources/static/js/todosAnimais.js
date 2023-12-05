@@ -19,10 +19,10 @@ function mostrarAnimais(){
                     <input type="hidden" id="animalId">
                     <h3>Nome do Animal: ${animal.nome} </h3>
                     <p>Tipo do animal: ${animal.tipo}</p>
-                    <p>Idade do animal: ${animal.idade}</p>
+                    <!--<p>Idade do animal: ${animal.idade}</p>
                     <p>Vacinado: ${animal.vacinado}</p>
                     <p>Castrado: ${animal.castrado}</p>
-                    <p>Descrição: ${animal.descricao}</p>
+                    <p>Descrição: ${animal.descricao}</p>-->
                     <div class="btn-adotar">
                     <a href="/infoAnimal">
                         <button class="botao-detalhes" id="animal" data-id="${animal.id}"> Mais Detalhes</button> 
