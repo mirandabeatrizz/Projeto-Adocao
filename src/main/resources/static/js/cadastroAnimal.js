@@ -1,4 +1,4 @@
-//LISTAR ANIMAIS CADASTRADOS
+/*----------------------------LISTA ANIMAIS------------------------------------- */
 function listarAnimais(){
     fetch('/animais/listar')
     .then(response => response.json())
@@ -64,22 +64,10 @@ function listarAnimais(){
     .catch(error => {
         console.error('Erro ao listar animais:', error);
     });
-    // Adiciona um ouvinte de evento ao evento popstate
 
 }
 
-/*
-function limitarQtdArquivos(files){
-    var maximoArq = 3;
-
-    if(files.length > maximoArq){
-        document.getElementById('file1').value = '';
-        document.getElementById('mensagemErro').innerText = 'O máximo de imagens permitidas é de até' + maximoArq;
-    } else{
-        document.getElementById('mensagemErro').innerText = '';
-    }
-}
-*/
+/*----------------------------MOSTRAR DADOS DO ANIMAL NO EDITAR------------------------------------- */
 function abrirFormularioEdicao(id) {
     // Aqui, você deve obter as informações do animal com o ID fornecido
     fetch(`/animais/buscar/${id}`)
@@ -113,16 +101,7 @@ function abrirFormularioEdicao(id) {
         console.error(`Erro ao obter informações do animal com ID ${id}:`, error);
     });
 }
-/* ----------------------------------------------------------------------------- */
-const nomeInput = document.getElementById('nome');
-const tipoInput = document.getElementById('tipo');
-const porteInput = document.getElementById('porte');
-const idadeInput = document.getElementById('idade');
-const descricaoInput = document.getElementById('descricao');
-const castradoInput = document.getElementById('castrado');
-const vacinadoInput = document.getElementById('vacinado');
-const animalIdInput = document.getElementById('animalId');
-
+/*----------------------------SALVAR EDIÇÃO ANIMAIS------------------------------------- */
 const botaoSalvar = document.getElementById('botaoSalvar');
 botaoSalvar.addEventListener('click', function() {
     // Aqui você deve enviar a solicitação de atualização para o servidor
@@ -164,9 +143,33 @@ botaoSalvar.addEventListener('click', function() {
     });
 });
 
+/*----------------------------ABRIR FORM CADASTRO NOVO ANIMAIS------------------------------------- */
+
+const abrirBtn = document.getElementById('btnAbrir');
+const popup = document.getElementById('popup');
+const fecharBtn = document.getElementById('addAnimais');
+
+abrirBtn.addEventListener('click', ()=>{
+    popup.style.display='flex';
+    localStorage.setItem('visited', 'true');
+});
+
+fecharBtn.addEventListener('click', ()=>{
+    popup.style.display='none';
+});
 
 
-//CADASTRAR NOVO ANIMAL
+/*----------------------------SALVA O CADASTRAR NOVO ANIMAIS------------------------------------- */
+
+const nomeInput = document.getElementById('nome');
+const tipoInput = document.getElementById('tipo');
+const porteInput = document.getElementById('porte');
+const idadeInput = document.getElementById('idade');
+const descricaoInput = document.getElementById('descricao');
+const castradoInput = document.getElementById('castrado');
+const vacinadoInput = document.getElementById('vacinado');
+const animalIdInput = document.getElementById('animalId');
+
 document.getElementById('addAnimais').addEventListener('click', function(){
     const nomeInput = document.getElementById('nomeAdd');
     const tipoInput = document.getElementById('tipoAdd');
@@ -223,24 +226,18 @@ document.getElementById('addAnimais').addEventListener('click', function(){
 
 });
 
-/* -------------------------------------------------------------------------------- */
-
-const abrirBtn = document.getElementById('btnAbrir');
-const popup = document.getElementById('popup');
-const fecharBtn = document.getElementById('addAnimais');
-
-abrirBtn.addEventListener('click', ()=>{
-    popup.style.display='flex';
-    localStorage.setItem('visited', 'true');
-});
-
-fecharBtn.addEventListener('click', ()=>{
-    popup.style.display='none';
-});
-
-
+/*----------------------------CHAMA A LISTA ANIMAIS------------------------------------- */
 listarAnimais();
 
-console.log(document.getElementById('file1').files.length);
+/*
+function limitarQtdArquivos(files){
+    var maximoArq = 3;
 
-
+    if(files.length > maximoArq){
+        document.getElementById('file1').value = '';
+        document.getElementById('mensagemErro').innerText = 'O máximo de imagens permitidas é de até' + maximoArq;
+    } else{
+        document.getElementById('mensagemErro').innerText = '';
+    }
+}
+*/
