@@ -38,10 +38,8 @@ public class UploadController {
 
         for (MultipartFile file: files){
         if (file.isEmpty()) {
-            redirectAttributes.addFlashAttribute("message", "Por favor, selecione um arquivo para fazer upload.");
-           
+            redirectAttributes.addFlashAttribute("message", "Por favor, selecione um arquivo para fazer upload.");  
         }
-
         try {
             byte[] bytes = file.getBytes();
             Path path = Paths.get(uploadPath + file.getOriginalFilename());
@@ -78,6 +76,10 @@ public class UploadController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    public static void limparListaImagems(){
+        listaImagems.clear();
     }
 
 }

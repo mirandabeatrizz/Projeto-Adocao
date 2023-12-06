@@ -1,0 +1,871 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.partedahome{
+    width: 100%;
+    height: 80px;
+}
+nav{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color:  #63724F;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 999;
+}
+.logo{
+    font-size: 19px;
+    color: #fff;
+    margin-left: -40px;
+    margin-top: 20px;
+}
+nav{
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+}
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+nav ul li{
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+    background: #96ad79;
+}
+nav .menu-btn i{
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.BotaoAnimais:hover, .BotaoSobre:hover, .BotaoContato:hover, .BotaoHome:hover{
+background-color: #96ad79;
+color: #000;
+transition: 1.0s;
+transform: scale(1.1); 
+}
+/*______________*/
+.ImagemPrincipal{
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.TextoEmcimaImagem{
+        position: absolute; 
+        top: 80px; 
+        left: 100PX; 
+        background-color: rgba(99, 114, 79, 0.7); 
+        padding: 60px; 
+        z-index: 1; 
+        text-transform: uppercase;
+        font-size: 50px;
+        border-radius: 50px;
+}
+.TextoEmcimaImagem .colorWhite {
+    color: #fff;
+}
+.IMG{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/*___________________________*/
+
+.imgsobredepoimento{
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        margin-top: 200px;
+    }
+    .imgsobredepoimento img{
+        width:90%;
+    }
+    .DepoimentoPessoa{
+        color: #63724F;
+        font-size: 55px;
+        margin-top: 40px ;
+        width: 100%; 
+        padding-left: 30px;
+    }
+
+    .depoimentodaPessoaNaosei{
+        width: 100%;
+        height: 380px;
+        float: left;
+        background-color: #ffffff;
+    
+    }
+
+   
+/*________________________*/
+.ParteSobreDoacao{
+    width: 100%;
+    height: 650px;
+    float: left;
+}
+.SobreDoacao{
+    width: 50%;
+    height: 650px;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+.QuemSomosNos{
+    color: #63724F;
+    font-size: 55px;
+    margin-top: 40px ;
+    width: 100%; 
+    padding-left: 30px;
+}
+.TextoQuemSomos{
+    color: #63724F;
+    font-size: 25px;
+    margin-top: 80px ;
+    padding-left: 30px;
+    width: 100%;
+}
+.QuemSoNosasdasd{
+    color: #63724F;
+    font-size: 55px;
+    margin-top: 40px ;
+    width: 100%; 
+    padding-left: 30px;
+}
+.ImgSobreDoacao{
+    width: 100%;
+    height: 650px;
+    float: left;
+    background-color: #ffffff;
+}
+.imgsobre1{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 100px;
+}
+.imgsobre1 img{
+    width:90%;
+}
+.imgsobre2{
+    width: 70%;
+    height: 260px;
+    margin-top: 50px;
+    
+}
+.imgsobre2 img{
+    width:90%;
+}
+/*__________________________*/
+.midia1{
+    width: 50%;
+    height: 350px;
+    float: left;
+    background-color: #63724F;
+    color: #475237;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.siga{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 70px;
+    font-size: 65px;
+}
+.midia2{
+    width: 50%;
+    height: 350px;
+    display: flex;
+    float: left;
+    background-color: #63724F;
+    align-items: center;
+    justify-content: center;
+}
+.LogoInstagram{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    margin-right: 100px;
+    cursor: pointer;
+}
+.AumentaTamanho:hover{
+    background-color: #96ad79;
+    color: #000;
+    transition: 1.0s;
+    transform: scale(1.2);
+    border-radius: 50%;
+}
+.AumentaTamanhoInsta2:hover{
+    background-color: #96ad79;
+    color: #000;
+    transition: 1.0s;
+    transform: scale(1.2);
+    border-radius: 40%;
+}
+.LogoFecebook{
+    display: flex;
+    width: 90px;
+    height: 90px;
+}
+.LogoWhatsapp{
+    display: flex;
+    width: 90px;
+    height: 90px;
+    margin-left: 100px;
+}
+/*_________________________________*/
+.ParteMapasEscritas{
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+}
+
+.escritasAoLadoDoMapaDeLocalizacao{
+    width: 50%;
+    height: 400px;
+}
+.tituloVenha{
+    font-size: 50px;
+    color: #475237;
+    margin-top: 30px ;
+    margin-left: 50px;
+}
+.imgiconMapa{
+    margin-left: 90px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.imgiconMapa:hover{
+    transition: 1.0s;
+    transform: scale(1.2);
+}
+.textoems{
+    width:100%;
+    height:200px;
+    color: #475237;
+    font-size: 20px;
+    padding-left: 50px;
+}
+.mapa{
+    width: 40%;
+    height: 400px;
+    align-items: center;
+    justify-content:center ;
+    display: flex;
+}
+/*_____________*/
+
+/*_______*/
+.prtesinal{
+    width: 100%;
+    background-color: #63724F   ;
+    height: 50px;
+    padding-left: 150px;
+}
+
+/*_____________*/
+
+.asasas{
+    width:50%;
+    height:auto;
+    float:left;
+}
+.SobreDoacao{
+    width:100%;
+    height:auto;
+}
+
+.safdasfasde{
+    width:50%;
+    height:auto;
+    float:left;
+}
+
+
+.imgsobre2{
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+@media screen and (max-width: 1000px) {
+
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    
+    .ParteSobreDoacao{
+        width: 100%;
+        height: auto;
+        float:left;
+    }     
+    .imgsobredepoimento{
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        margin-top: 50px;
+        margin-left: 30px;
+    }
+    .asasas{
+    width:100%;
+    height:auto;
+    float:left;   
+    }
+    .SobreDoacao{
+        width:100%;
+        height:auto;
+    }
+    .safdasfasde{
+        width:100%;
+        height:auto;
+        float:left;
+    }
+    .ImgSobreDoacao{
+        width: 100%;
+        height: 650px;
+        float: left;
+        background-color: #ffffff;
+
+    }
+    .depoimentodaPessoaNaosei{
+        width: 100%;
+        height: 650px;
+        float: left;
+        background-color: #ffffff;
+    
+    }
+    .TextoQuemSomos{
+        color: #63724F;
+        font-size: 25px;
+        margin-top: 30px ;
+        padding-left: 30px;
+        width: 100%;
+    }
+    .QuemSoNosasdasd{
+        color: #63724F;
+        font-size: 55px;
+        margin-top: 40px ;
+        width: 100%; 
+        padding-left: 30px;
+        margin-top: -300px;
+
+    }
+    .imgsobre1{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;   
+    }
+    .imgsobre2{
+        width: 90%;
+        height: 240px;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    
+    }
+    /*__________________________*/
+    .midia1{
+        width: 100%;
+        height: 225px;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .siga{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-top: 70px;
+        font-size: 55px;
+    }
+    .midia2{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        float: left;
+        background-color: #63724F;
+        align-items: center;
+        justify-content: center;
+    }
+        
+    .LogoInstagram{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        margin-left: -50px;
+    }
+
+    .LogoFecebook{
+        display: flex;
+        width: 50px;
+        height: 50px;
+        
+    }
+    .LogoWhatsapp{
+        display: flex;
+        width: 50px;
+        height: 50px;
+    }
+
+    /*_________________________________*/
+
+    .ParteMapasEscritas{
+        width: 100%;
+        height: auto;
+        float: left;
+        display: table;
+        background-color: rgb(255, 255, 255);
+    }
+    
+    .escritasAoLadoDoMapaDeLocalizacao{
+        width: 100%;
+        height: 400px;
+        float:left; 
+    }
+    
+    .tituloVenha{
+        font-size: 35px;
+        color: #475237;
+        margin-top: 10px ;
+        margin-left: 50px;
+    }
+    .imgiconMapa{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        cursor: pointer;
+    }
+    .imgiconMapa:hover{
+        transition: 1.0s;
+        transform: scale(1.2); 
+    }
+    .textoems{
+        color: #475237;
+        font-size: 20px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        
+    }
+    .mapa{
+        width: 100%;
+        height: 300px;
+        float:left;
+    }
+    .prtesinal{
+        width: 100%;
+        background-color: #63724F   ;
+        height: 50px;
+        padding-left: 150px;
+    }
+    .ParteAnimal{
+        width: 100%;
+        height: 500px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+    }
+
+    }
+
+@media screen and (max-width: 900px) {
+
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+  
+    .depoimentosPessoas {
+        width: 800px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .Divisao100 {
+        width: 100%;
+        height: auto;
+        display: block;
+        float: none;
+    }
+    .imagenPessoaDepoimento {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin: 20px 0;
+    }
+    .imgpessoadepo {
+        width: 100%;
+        height: auto;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .TextoDepoimento {
+        width: 100%;
+        height: auto;
+        display: block;
+        float: none;
+        text-align: center;
+    }
+
+   
+}
+
+@media screen and (max-width: 800px) {
+
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+   
+    nav .menu-btn i{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background-color: #63724F;
+        height: 100vh;
+        width: 50%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    nav ul.open{
+        left: 0;
+    }
+    nav ul li{
+        width: 100%;
+        margin: 50px 0;
+    }
+    nav ul li a {
+        font-size: 23px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+        background: none;
+        color: black;
+    }
+
+/*__________________*/
+
+    .ParteSobreDoacao{
+        width: 100%;
+        height: auto;
+        float:left;
+    }
+
+    .asasas{
+    width:100%;
+    height:auto;
+    float:left;   
+    }
+    .SobreDoacao{
+        width:100%;
+        height:auto;
+    }
+
+    .safdasfasde{
+    width:100%;
+        height:auto;
+        float:left;
+    }
+    .ImgSobreDoacao{
+        width: 100%;
+        height: 650px;
+        float: left;
+        background-color: #ffffff;
+
+    }
+    .depoimentodaPessoaNaosei{
+        width: 100%;
+        height: 650px;
+        float: left;
+        background-color: #ffffff;
+    
+    }
+
+    .imgsobre1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        
+    }
+    .imgsobre2{
+        width: 70%;
+        height: 260px;
+        margin-top: 20px;
+    
+    }
+    /*__________________________*/
+    .midia1{
+        width: 100%;
+        height: 225px;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .siga{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-top: 70px;
+        font-size: 55px;
+    }
+    .midia2{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        float: left;
+        background-color: #63724F;
+        align-items: center;
+        justify-content: center;
+    }
+    
+.LogoInstagram{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    margin-left: -50px;
+}
+
+.LogoFecebook{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    
+}
+.LogoWhatsapp{
+    display: flex;
+    width: 50px;
+    height: 50px;
+}
+
+    /*_________________________________*/
+
+    .ParteMapasEscritas{
+        width: 100%;
+        height: auto;
+        float: left;
+        display: table;
+        background-color: rgb(255, 255, 255);
+    }
+    .escritasAoLadoDoMapaDeLocalizacao{
+        width: 100%;
+        height: 400px;
+        float:left;
+    }
+    .tituloVenha{
+        font-size: 35px;
+        color: #475237;
+        margin-top: 10px ;
+        margin-left: 50px;
+    }
+    .imgiconMapa{
+        margin-left: 90px;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+    .imgiconMapa:hover{
+        transition: 1.0s;
+        transform: scale(1.2); 
+    }
+    .textoems{
+        color: #475237;
+        font-size: 20px;
+    }
+    .mapa{
+        width: 100%;
+        height: 300px;
+        float:left;
+    }
+    .prtesinal{
+        width: 100%;
+        background-color: #63724F   ;
+        height: 50px;
+        padding-left: 150px;
+       
+    }
+    .ParteAnimal{
+        width: 100%;
+        height: 500px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+    }
+
+    }
+
+    @media screen and (max-width: 550px) {
+
+        body{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        
+
+
+        
+nav{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color:  #63724F;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 999;
+
+}
+
+    .TextoEmcimaImagem{
+            position: absolute; 
+            top: 80px; 
+            left: 30PX; 
+            background-color: rgba(99, 114, 79, 0.5); 
+            padding: 60px; 
+            z-index: 1; 
+            text-transform: uppercase;
+            font-size: 50px;
+            border-radius: 50px;
+    }
+    /*___________________________*/
+    .depoimentosPessoas {
+        width: 800px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .Divisao100 {
+        width: 100%;
+        height: auto;
+        display: block;
+        float: none;
+    }
+    .imagenPessoaDepoimento {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin: 20px 0;
+    }
+    .imgpessoadepo {
+        width: 100%;
+        height: auto;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .TextoDepoimento {
+        width: 100%;
+        height: auto;
+        display: block;
+        float: none;
+        text-align: center;
+    }
+    /*________________________*/
+    .ParteSobreDoacao{
+        width: 100%;
+        height: auto;
+        float:left;
+    }
+    .asasas{
+    width:100%;
+    height:auto;
+    float:left;
+    }
+    .SobreDoacao{
+        width:100%;
+        height:auto;
+    }
+    .safdasfasde{
+    width:100%;
+        height:auto;
+        float:left;
+    }
+    .ImgSobreDoacao{
+        width: 100%;
+        height: 650px;
+        float: left;
+        background-color: #ffffff;
+
+    }
+    .depoimentodaPessoaNaosei{
+        width: 100%;
+        height: 650px;
+        float: left;
+        background-color: #ffffff;
+    }
+    .imgsobre1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 200px;
+        margin-top: 50px;
+    }
+    .imgsobre2{
+        width: 90%;
+        height: 260px;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+        

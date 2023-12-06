@@ -34,6 +34,7 @@ public class SpringSecurity {
                                  .requestMatchers("/todosAnimais/**").permitAll()
                                 .requestMatchers("/index").permitAll()
                                  .requestMatchers("/infoAnimal/**").permitAll()
+                                 .requestMatchers("/formInteresse/**").permitAll()
                                  .requestMatchers("/teste").permitAll()
                                 .requestMatchers("/").permitAll()
                                 .requestMatchers("/animais/**").permitAll()

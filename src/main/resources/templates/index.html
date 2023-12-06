@@ -1,34 +1,170 @@
 <!DOCTYPE html>
-<html lang="pt-br"
-  xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Adoção</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+
+    <title>Principal</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Sistema de Gerenciamento de Animais</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/login}">Login</a>
-                </li>
-            </ul>
+ 
+<div class="partedahome">
+  <nav>
+      <div class="logo"> DOAÇÃO DE ANIMAIS </div>
+
+      <div class="menu-btn">
+          <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
+      </div>
+
+      <ul>
+          <li> <a href="index" class="BotaoHome" onclick="window.location.href='./index.html';"> HOME</a> </li>
+
+          <li> <a href="#sobreDoacaoWH" class="BotaoSobre"> SOBRE</a> </li>
+
+          <li> <a href="todosAnimais" class="BotaoAnimais"> ANIMAIS</a> </li>
+
+          <li> <a href="#contato" class="BotaoContato">CONTATO</a> </li>
+
+      </ul>
+  </nav>
+</div>
+
+
+<!--_________-->
+
+
+  <div class="ImagemPrincipal">
+    <img class="IMG" src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/318/318935/happy-child-with-dog.jpg?w=1155&h=1541" alt="">
+    <div class="TextoEmcimaImagem">
+      <p class="colorWhite">Sua Casa <br>
+        mais feliz</p>
+    </div>
+  </div>
+  
+<!--_________-->
+
+    <div class="ParteSobreDoacao" >
+
+        <div class="asasas">
+                  <div class="SobreDoacao">
+                    <p class="DepoimentoPessoa"> Depoimento de Mariana</p>
+                    <p class="TextoQuemSomos">Bili, um gato adotado por Mariana, Bili estava a procura de um novo lar e Mariana estava buscando um novo amigo. Mariana conta que ficou muito feliz após a adoção de Bili, ela diz ainda que está ajudando, por que muitos animais não tem um lar</p>
+                  </div>
+        </div>
+        <div class="safdasfasde">
+                  <div class="depoimentodaPessoaNaosei">
+                      <div class="imgsobredepoimento">   
+                          <img src="https://th.bing.com/th/id/OIP.2dkhIQcMw07096k5UROVxwHaDB?rs=1&pid=ImgDetMain" width="400" alt="">
+                      </div>
+                  </div>
         </div>
     </div>
-</nav>
-<div class="container">
-    <div class="row">
-        <h1 class="text-center"> Bem-vindo ao Sistema de Gerenciamento de Animais para Adoção </h1>
+
+
+    <div class="linhaverde"></div>
+
+  <!--________-->
+
+  <div class="ParteSobreDoacao" id="sobreDoacaoWH">
+
+      <div class="asasas">
+                <div class="SobreDoacao">
+                  <div class="QuemSoNosasdasd">
+                      <p> Quem<br> 
+                          somos nós?</p>
+                  </div>
+                    <div class="TextoQuemSomos">
+                    <p>A Casa do Bicho é uma
+                        organização social sem fins
+                        lucrativos que visa ajudar 
+                        animais abandonados a
+                        encontrarem um lar cheio de 
+                        amor e carinho novamente.<br>
+                    </p>
+                    </div>
+                </div>
+      </div>
+      <div class="safdasfasde">
+
+                <div class="ImgSobreDoacao">
+
+                    <div class="imgsobre1">   
+                        <img src="../IMg/563358.png" width="400" alt="">
+                    </div>
+
+                    <div class="imgsobre2">        
+                        <img src="https://th.bing.com/th/id/OIP.ECXspvHS2MqcHYusRNwdlwHaE8?pid=ImgDet&rs=1" width="400" alt="">
+                    </div>
+                </div>
+
+      </div>
+  </div>
+
+
+  <!--___________________________________________________-->
+  <div class="midia1" id="contato">
+    <p class="siga">SIGA NOSSAS<br>
+       REDES SOCIAIS</p>
+       
+  </div>
+
+  <div class="midia2">
+
+    <div class="LogoInstagram">
+      <a href="https://www.linkedin.com/in/mateus-fagundes-aa1220285/">
+      <img  class="AumentaTamanhoInsta2" src="https://th.bing.com/th/id/R.af1159ea3dd22f4b3d84a87d869127b9?rik=iz68IEBoErXAHw&riu=http%3A%2F%2Fpluspng.com%2Fimg-png%2Finstagram-icon-png-instagram-icon-1600.png&ehk=%2BAo2wF7lgRZJrtXPe3ev37c8JDCD6NBcj%2FGufhuhjQE%3D&risl=&pid=ImgRaw&r=0" alt="" width="90px" height="90px">
+      </a>
     </div>
-</div>
+
+    <div class="LogoFecebook">
+      <a href="">
+      <img class="AumentaTamanho" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_(black).svg/1024px-Facebook_icon_(black).svg.png?20160411105641" alt="" width="90px" height="90px">
+      </a>
+    </div>
+
+    <div class="LogoWhatsapp">
+      <a href="">
+      <img  class="AumentaTamanho" src="https://icones.pro/wp-content/uploads/2021/02/icone-du-logo-whatsapp-noir.png" alt="" width="90px" height="90px">
+      </a>
+    </div>
+
+  </div>
+<!--_____________________________________________________________-->
+  <div class="ParteMapasEscritas">
+
+      <div class="escritasAoLadoDoMapaDeLocalizacao">
+          <p class="tituloVenha">Venha nos visitar</p><br>
+          <a href="https://www.google.com/maps?ll=-27.087785,-52.625312&z=18&t=m&hl=pt-BR&gl=BR&mapclient=embed&cid=14679682899370459804">
+              <img class="imgiconMapa" src="https://logodownload.org/wp-content/uploads/2018/01/google-maps-logo-1-1.png" width="40px" height="60px">
+          </a>
+    
+          <p class="textoems">Estamos no Bairro São Cristovão<br>
+                              próximo ao Mercado Celeiro, Rua <br>
+                              Castro Alves, 298E, em Chapecó <br>
+                              Santa Catarina.</p>
+      </div>
+
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1056.068062938894!2d-52.625568039395276!3d-27.087765062274062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b42ce29f3f15%3A0xcbb8b5d2185a429c!2sFaculdade%20Senac%20Chapec%C3%B3!5e0!3m2!1spt-BR!2sbr!4v1696371666325!5m2!1spt-BR!2sbr" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+  </div>
+
+  <div class="prtesinal">
+    <P> &#169Todos os direitos reservados</P>
+  </div>
+
+
+   <script src="../JavaScript.js/JS.js"></script> 
+ 
 </body>
 </html>
+

@@ -35,11 +35,7 @@ public class AuthController { //rotas e navegação
 
     @GetMapping("/")
     public String home() {
-        return "todosAnimais";
-    }
-    @GetMapping("/index")
-    public String index(){
-        return"todosAnimais";
+        return "index";
     }
 
     @GetMapping("/login")

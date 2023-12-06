@@ -9,7 +9,8 @@ function mostrarAnimais(){
     .then(data =>{        
         const infoAnimais = document.getElementById('infoAnimais');
         infoAnimais.innerHTML = `
-                <div class="PrincipalImagens" data-id="${data.id}>
+                <div class="PrincipalImagens" >
+                       
                         <div class="Img1">
                             <img class="Imagem1animal" src="${data.file1}" alt="">
                         </div>
@@ -19,7 +20,7 @@ function mostrarAnimais(){
                         </div>
                 
                         <div class="Img3">
-                            <img class="Imagem3animal" src="${data.file2}" alt="">
+                            <img class="Imagem3animal" src="${data.file3}" alt="">
                         </div>
                 </div>
     
@@ -63,7 +64,7 @@ function mostrarAnimais(){
                                     </div>
                             </div>
                             <div class="ParteDescricao">
-                                <p class="escritaOpacity3">Sobre esté animal</p>
+                                <p class="escritaOpacity3">Sobre este animal</p>
                                 <P class="partetextodes">${data.descricao}</P>
                             </div>
                 </div>
@@ -71,15 +72,73 @@ function mostrarAnimais(){
                 </div>
         
                 <div class="ParteFormulario">
-                    <a href="/formInteresse"><button class="ParteButtonParaFomes">Acesse o Formulário</button></a>
+                <button class="ParteButtonParaFomes" id = "editar" data-id="${data.id}" >Acesse o Formulário</button>
                 </div>
         
             </div>
-        `           
+        `      
+        const botoesEditar = document.querySelectorAll('.ParteButtonParaFomes');
+
+       botoesEditar.forEach(botao => {
+            botao.addEventListener('click', function() {
+                const id = localStorage.getItem('idAnimal');
+                abrirFormularioEdicao(id);
+                
+            });
+        });     
     })
+    
     .catch(error => {
         console.error('Erro ao listar animais:', error);
     });
 }
+function abrirFormularioEdicao(id) {
+    
+    const formularioEdicao = document.getElementById('formpopup');
+    formularioEdicao.style.display = 'flex';
+
+    const nomeInput = document.getElementById('nome');
+    const cpfInput = document.getElementById('cpf');
+    const emailInput = document.getElementById('email');
+    //const telefoneInput = document.getElementById('teleofne');
+    const cepInput = document.getElementById('cep');
+    const idadeInput = document.getElementById('idade');
+    const msgInput = document.getElementById('msg');
+    localStorage.setItem('idAnimal', id);
+
+    const nome = nomeInput.value;
+    const cpf = cpfInput.value;
+    const email = emailInput.value;
+    //const telefone = telefoneInput.value;
+    const cep = cepInput.value;
+    const msg = msgInput.value
+    const idade = idadeInput.value;
+
+    fetch('/interesse/add',{
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nome: nome,
+            cpf: cpf,
+            email: email,
+            cep: cep,
+            msg: msg,
+            idade: idade
+
+        })  
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(`Animal com ID ${id} editado com sucesso.`);
+        formularioEdicao.style.display = 'none';
+       
+    })
+    .catch(error => {
+        console.error('Erro ao adicionar interesse:', error);
+    });
+}
+
 
 mostrarAnimais();

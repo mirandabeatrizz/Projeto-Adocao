@@ -22,6 +22,10 @@ public class SiteController {
     public String infoAnimal(){
         return"infoAnimal";
     }
+     @GetMapping("/formInteresse")
+    public String formInteresse(){
+        return"formInteresse";
+    }
        @GetMapping("/teste")
     public String teste(){
         return"teste";

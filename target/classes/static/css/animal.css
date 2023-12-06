@@ -16,7 +16,6 @@ nav{
     display: flex;
     height: 80px;
     width: 100%;
-    background-color: #123;
     align-items: center;
     justify-content: space-between;
     padding: 0 50px 0 100px;
@@ -156,13 +155,16 @@ display: flex;
 cursor: pointer;
 }
 /*___________*/
-
+img{
+    object-fit: cover;
+}
 .PrincipalImagens{
     width: 100%;
     height: 340px;
     background-color: #63724F;
     display: flex;
-    margin-top: 70px;
+    margin-top: 50px;
+    padding:30px 0 ;
 }
 .Img1{
     width: 33.3%;
@@ -193,6 +195,7 @@ cursor: pointer;
     width: 100%;
     height: 600px;
     display: flex;
+    margin-top: 10px;
     
 }
 /*________*/
@@ -244,6 +247,7 @@ cursor: pointer;
     width: 30%;
     height: 300px;
     background-color: rgb(255, 255, 255);
+    border-radius: 0 0 0 10px;
 }
 .ParteNomes2{
     width: 25%;
@@ -256,6 +260,7 @@ cursor: pointer;
     height: 300px;
     background-color: rgb(255, 255, 255);
     margin-left: -40px;
+    border-radius: 10px 0;
 }
 /*_______*/
 .escritaOpacity{
@@ -289,17 +294,17 @@ cursor: pointer;
 }
 
 .ParteButtonParaFomes{
-    width: 100%;
+    width: 80%;
     height: 65px;
     background-color: #63724F;
     border-radius: 20px;
     margin-top: 50px;
-    margin-left: 55px;
-    border-color: 10px;
+    margin: auto;
     border:3px;
     color: #ffffff;
     font-size: 16px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

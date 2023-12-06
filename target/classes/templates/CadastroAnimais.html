@@ -41,7 +41,6 @@
                 <th>Tipo</th>
                 <th>Porte</th>
                 <th>Idade</th>
-                <th>Descrição</th>
                 <th>Castrado</th>
                 <th>Vacinado</th>
                 <th>Ações</th><!-- Coluna para ações -->
@@ -119,14 +118,14 @@
             </div>
             <div class="form-group radio">
                 <label for="castrado">Castrado:</label>
-                <input type="radio"  value="sim Cadastrado" name="castrado" id="castrado" class="form-input">Sim
-                <input type="radio"  value="nao Cadastrado" name="castrado" id="castrado" class="form-input">Não
+                <input type="radio"  value="Sim" name="castrado" id="castrado" class="form-input">Sim
+                <input type="radio"  value="Não" name="castrado" id="castrado" class="form-input">Não
             </div>
             <div class="form-group radio">
                 <label for="vacinado">Vacinado:</label>
-                    <input type="radio" value="sim Vacinado" name="vacinado" id="vacinado" class="form-input"
+                    <input type="radio" value="Sim" name="vacinado" id="vacinado" class="form-input"
                         step="0.01">Sim
-                    <input type="radio" value="nao Vacinado" name="vacinado" id="vacinado" class="form-input"
+                    <input type="radio" value="Não " name="vacinado" id="vacinado" class="form-input"
                         step="0.01">Não
             </div>
             <div class="form-group">
@@ -139,14 +138,13 @@
             </div>
         </form> 
     </div>
-    <script src="/js/script.js"></script>
+    <script src="/js/cadastroAnimal.js"></script>
     <script>
         // Verifica se já visitou a página
         if (localStorage.getItem('visited') === 'true') {
           // Exibe a mensagem ao voltar
           popup.style.display='flex'; //substituir pelo exebir popup o flex no caso
         }
-    
         // Marca a página como visitada
         localStorage.setItem('visited', 'false');
       </script>

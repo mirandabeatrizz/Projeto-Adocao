@@ -30,21 +30,27 @@ public class AnimaisController {
     @Autowired
     private AnimaisRepository animaisRepository;
 
-    public AnimaisController(AnimaisRepository animaisRepository){
+    public AnimaisController(AnimaisRepository animaisRepository) {
         this.animaisRepository = animaisRepository;
     }
-    
+
     @PostMapping("/adicionar")
-    public Animais adicionarAnimais(@RequestBody Animais animais){        
-        animais.setFile1(UploadController.getListaImagems().get(0).getCaminho());
-        animais.setFile2(UploadController.getListaImagems().get(1).getCaminho());
-        animais.setFile3(UploadController.getListaImagems().get(2).getCaminho());
+    public Animais adicionarAnimais(@RequestBody Animais animais) {
+        try {
+            animais.setFile1(UploadController.getListaImagems().get(0).getCaminho());
+            animais.setFile2(UploadController.getListaImagems().get(1).getCaminho());
+            animais.setFile3(UploadController.getListaImagems().get(2).getCaminho());
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        UploadController.limparListaImagems();
         return animaisRepository.save(animais);
-        //UploadController.zerarLista();
+
+        // UploadController.zerarLista();
     }
- 
+
     @PutMapping("/editar/{id}")
-    public Animais editarAnimais(@PathVariable Long id, @RequestBody Animais novoAnimal){
+    public Animais editarAnimais(@PathVariable Long id, @RequestBody Animais novoAnimal) {
         return animaisRepository.findById(id).map(animais -> {
             animais.setNome(novoAnimal.getNome());
             animais.setTipo(novoAnimal.getTipo());
@@ -55,28 +61,26 @@ public class AnimaisController {
             animais.setDescricao(novoAnimal.getDescricao());
             return animaisRepository.save(animais);
         })
-        .orElseGet(() ->{
-            //novoAnimal.setId(id);
-           // return animaisRepository.save(novoAnimal);
-           throw new EntityNotFoundException();
-        });
+                .orElseGet(() -> {
+                    // novoAnimal.setId(id);
+                    // return animaisRepository.save(novoAnimal);
+                    throw new EntityNotFoundException();
+                });
     }
 
     @GetMapping("/listar")
-    public List<Animais> listarAnimais(){
+    public List<Animais> listarAnimais() {
         return animaisRepository.findAll();
     }
 
     @GetMapping("/buscar/{id}")
-    public Optional<Animais> buscarAutor(@PathVariable Long id){
+    public Optional<Animais> buscarAutor(@PathVariable Long id) {
         return animaisRepository.findById(id);
     }
 
-     @DeleteMapping("/excluir/{id}")
-    public void excluirAnimais(@PathVariable Long id){
+    @DeleteMapping("/excluir/{id}")
+    public void excluirAnimais(@PathVariable Long id) {
         animaisRepository.deleteById(id);
     }
 
-
-    
 }
