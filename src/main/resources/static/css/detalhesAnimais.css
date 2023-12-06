@@ -28,6 +28,7 @@ body{
 .menu .conteudo-menu ul li a{
     text-decoration: none;
     color: #fff;
+    text-transform: uppercase;
 }
 .menu .conteudo-menu ul li a:hover{
     color: #afbb9f;

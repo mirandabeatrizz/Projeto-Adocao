@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/detalhesAnimais.css">
+    <link rel="stylesheet" href="/css/index.css">
     <title>Animais</title>
 </head>
 <body>
 <!------------------------------MENU-------------------------------> 
-    <div class="menu">
-        <div class="logo">
-            <img src="" alt="logo do site">
+<div class="partedahome">
+    <nav>
+        <div class="logo"> DOAÇÃO DE ANIMAIS </div>
+  
+        <div class="menu-btn">
+            <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
         </div>
-        <nav class="conteudo-menu">
-            <ul>
-                <li><a href="index">Home</a></li>
-                <li><a href="index">Sobre</a></li>
-                <li><a href="todosAnimais">Animais</a></li>
-                <li><a href="index">Contato</a></li>
-            </ul>
-        </nav>
-    </div>
+  
+        <ul>
+            <li> <a href="/" class="BotaoHome" onclick="window.location.href='./index.html';"> HOME</a> </li>
+  
+            <li> <a href="#sobreDoacaoWH" class="BotaoSobre"> SOBRE</a> </li>
+  
+            <li> <a href="todosAnimais" class="BotaoAnimais"> ANIMAIS</a> </li>
+  
+            <li> <a href="#contato" class="BotaoContato">CONTATO</a> </li>
+  
+        </ul>
+    </nav>
+  </div>
 <!------------------------------CARD COM ANIMAL------------------------------->
 <div>    
     <section id="detalhesAnimais">
