@@ -14,6 +14,9 @@ body{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+img{
+    object-fit: cover;
+}
 .partedahome{
     width: 100%;
     height: 80px;
@@ -34,7 +37,6 @@ nav{
     font-size: 19px;
     color: #fff;
     margin-left: -40px;
-    margin-top: 20px;
 }
 nav{
     color: white;
@@ -103,19 +105,21 @@ transform: scale(1.1);
 
 .imgsobredepoimento{
         width: 100%;
-        height: 200px;
+        height: 340px;
         overflow: hidden;
         margin-top: 200px;
     }
     .imgsobredepoimento img{
         width:90%;
+        margin-left: 20px;
+        height: 78%;
     }
     .DepoimentoPessoa{
         color: #63724F;
         font-size: 55px;
         margin-top: 40px ;
         width: 100%; 
-        padding-left: 30px;
+        padding-left: 80px;
     }
 
     .depoimentodaPessoaNaosei{
@@ -130,8 +134,10 @@ transform: scale(1.1);
 /*________________________*/
 .ParteSobreDoacao{
     width: 100%;
-    height: 650px;
+    height: 595px;
     float: left;
+    border-top: dotted #63724f6e;
+    margin-bottom: 20px;
 }
 .SobreDoacao{
     width: 50%;
@@ -150,16 +156,22 @@ transform: scale(1.1);
 .TextoQuemSomos{
     color: #63724F;
     font-size: 25px;
-    margin-top: 80px ;
-    padding-left: 30px;
+    margin-top: 50px ;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 26px;
 }
+.TextoQuemSomos p{
+    width: 80%;
+    text-align: justify;
+} 
 .QuemSoNosasdasd{
     color: #63724F;
     font-size: 55px;
     margin-top: 40px ;
     width: 100%; 
-    padding-left: 30px;
+    padding-left: 80px;
 }
 .ImgSobreDoacao{
     width: 100%;
@@ -169,7 +181,6 @@ transform: scale(1.1);
 }
 .imgsobre1{
     width: 100%;
-    height: 200px;
     overflow: hidden;
     margin-top: 100px;
 }
@@ -184,14 +195,15 @@ transform: scale(1.1);
 }
 .imgsobre2 img{
     width:90%;
+    margin-left: 20px;
+    height: 100%;
 }
 /*__________________________*/
 .midia1{
     width: 50%;
     height: 350px;
     float: left;
-    background-color: #63724F;
-    color: #475237;
+    background-color: #63724fd4;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .siga{
@@ -200,15 +212,25 @@ transform: scale(1.1);
     display: flex;
     margin-top: 70px;
     font-size: 65px;
+    color: #fff;
 }
 .midia2{
     width: 50%;
     height: 350px;
     display: flex;
     float: left;
-    background-color: #63724F;
+    background-color: #63724fd4;
     align-items: center;
     justify-content: center;
+}
+
+.midia2 .redes-logo a i{
+    font-size: 88px;
+    color: #fff;
+    margin: 0px 30px;
+}
+.midia2 .redes-logo a i:hover{
+    color: #e9ece5af;
 }
 .LogoInstagram{
     width: 90px;
@@ -252,13 +274,15 @@ transform: scale(1.1);
 
 .escritasAoLadoDoMapaDeLocalizacao{
     width: 50%;
-    height: 400px;
+    height: 380px;
+    margin-top: 20px;
 }
+
 .tituloVenha{
     font-size: 50px;
     color: #475237;
     margin-top: 30px ;
-    margin-left: 50px;
+   text-align: center;
 }
 .imgiconMapa{
     margin-left: 90px;
@@ -274,7 +298,7 @@ transform: scale(1.1);
     height:200px;
     color: #475237;
     font-size: 20px;
-    padding-left: 50px;
+    text-align: center;
 }
 .mapa{
     width: 40%;
@@ -290,7 +314,8 @@ transform: scale(1.1);
     width: 100%;
     background-color: #63724F   ;
     height: 50px;
-    padding-left: 150px;
+    padding-top: 10px;
+    text-align: center;
 }
 
 /*_____________*/
