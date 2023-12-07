@@ -1,9 +1,5 @@
 function mostrarAnimais(){
-   //const animalId = document.getElementById("abrirFormInteresse");
-   //console.log(animalId);
-
    const idAnimal = localStorage.getItem('idAnimal'); //pega o id do animal 
-   
     fetch(`/animais/buscar/${idAnimal}`)
     .then(response => response.json())
     .then(data =>{        

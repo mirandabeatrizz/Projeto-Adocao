@@ -45,8 +45,6 @@ public class AnimaisController {
         }
         UploadController.limparListaImagems();
         return animaisRepository.save(animais);
-
-        // UploadController.zerarLista();
     }
 
     @PutMapping("/editar/{id}")
@@ -62,8 +60,6 @@ public class AnimaisController {
             return animaisRepository.save(animais);
         })
                 .orElseGet(() -> {
-                    // novoAnimal.setId(id);
-                    // return animaisRepository.save(novoAnimal);
                     throw new EntityNotFoundException();
                 });
     }

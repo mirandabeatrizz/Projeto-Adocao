@@ -26,11 +26,5 @@ public class SiteController {
     public String formInteresse(){
         return"formInteresse";
     }
-       @GetMapping("/teste")
-    public String teste(){
-        return"teste";
-    }
-    
-
-    
+   
 }

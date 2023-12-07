@@ -66,7 +66,7 @@ function listarAnimais(){
 
 }
 
-/*----------------------------MOSTRAR DADOS DO ANIMAL NO EDITAR------------------------------------- */
+/*----------------------MOSTRAR DADOS DO ANIMAL NO EDITAR--------------------------------- */
 function abrirFormularioEdicao(id) {
     // Aqui, você deve obter as informações do animal com o ID fornecido
     fetch(`/animais/buscar/${id}`)
@@ -168,7 +168,6 @@ const descricaoInput = document.getElementById('descricao');
 const castradoInput = document.getElementById('castrado');
 const vacinadoInput = document.getElementById('vacinado');
 const animalIdInput = document.getElementById('animalId');
-
 document.getElementById('addAnimais').addEventListener('click', function(){
     const nomeInput = document.getElementById('nomeAdd');
     const tipoInput = document.getElementById('tipoAdd');
@@ -214,9 +213,7 @@ document.getElementById('addAnimais').addEventListener('click', function(){
         vacinadoInput.value = '';
         descricaoInput.value = '';
         imagemInput.value = '';
-        
         listarAnimais();
-
         localStorage.setItem('visited', 'false');
     })
     .catch(error => {
